@@ -1,0 +1,155 @@
+# {{ cookiecutter.project_name }}
+
+{{ cookiecutter.description }}
+
+
+## File Structure
+
+
+```
+    |-- .devcontainer                       <- definition of the docker container and environment for VS Code.
+    |   |-- Dockerfile                      <- Defines the docker container.
+    |   |-- devcontainer.json               <- Defines the devcontainer settings for VS Code.
+    |-- install_dependecies.sh              <- To handle custom python packages
+    |-- Makefile                            <- Makefile with commands like `make data`
+    |-- README.md                           <- This readme
+    |-- data
+    |   |-- 0external                       <- Data from third party sources.
+    |   |-- 1raw                            <- The original, immutable data dump.
+    |   |-- 2interim                        <- Intermediate data that has been transformed.
+    |   `-- 3processed                      <- The final, canonical data sets for modelling or presentations.
+    |-- delivery                            <- Deliver to clients or internal.
+    |-- notebooks                           <- Jupyter notebooks.
+    |   `-- exploratory                     <- Data explorations
+    |       `-- 1.0-tg-example.ipynb        <- Jupyter notebook with naming conventions. tg are initials
+    |-- presentations                       <- All related powerpoint files, especially for Deliverables.
+    |-- references                          <- Data dictionaries, manuals, papers and all other explanatory materials.
+    |-- reports                             <- Latex based reports
+    |   |-- .devcontainer                   <- Latex docker container
+    |   `-- figures                         <- Figures for reports generated with python.
+    |-- setup.py                            <- Setup file of the src package.
+    `-- src                                 <- Source code for use in this project.
+        |-- __init__.py                     <- Makes src a Python module.
+        |-- data                            <- Scripts to download, generate and parse data
+        |   |-- __init__.py
+        |   |-- config.py                   <- Project wide path definitions.
+        |   |-- example.py                  <- Just an example on how the add your own source files.
+        |   |-- import_data.py              <- Functions to read raw data.
+        |   `-- make_dataset.py             <- Scripts to download or generate data (used in the Makefile)
+        |-- features                        <- Scripts and functions to turn raw data into features for modelling.
+        |-- models                          <- Scripts and functions to train models and then use trained models.
+        |   |-- __init__.py
+        |   |-- predict_model.py
+        |   `-- train_model.py
+        |-- tools                           <- Scripts and Functions for general use, like converters.
+        |   |-- __init__.py
+        |   |-- convert_latex.py            <- Functions to convert elements for use in latex
+        |   |-- convert_pictures.py         <- Functions to convert pictures
+        |   |-- convert_pptx.py             <- Functions and scripts to convert powerpoint files
+        `-- visualization                   <- Scripts and functions to create visualizations.
+            |-- __init__.py
+            |-- make_plots.py               <- Scripts to make all plots for the publication.
+            `-- visualize.py                <- Functions to produce final plots.
+
+```
+
+
+## Getting started
+
+
+Before the first start you need to login to our gitlab docker repo. You need to create an access token in your user setting on gitlab and use the token in the following command:
+
+```
+docker login registry-gitlab.v2c2.at -u YOUR_USERNAME -p YOUR_TOKEN
+```
+
+
+## Important
+
+* Optimised for VS code. It should also work with other editors which would require some additional steps.
+* Raw data is immutable (do not change it!)
+* Develop reusable functions in jupyter notebooks and then put them in the _src_ package (with docstring and typehints)
+* Open reports folder separate in a VS code window (own .devcontainer with LaTeX)
+* Some VS Code settings are already defined in devcontainer.json
+
+## Project specific packages and settings
+
+Change Dockerfile in the .devcontainer folder if you want to install additional python packages.
+
+For example add the new line:
+
+```
+RUN conda install sqlalchemy
+```
+
+And/Or change the devcontainer.json which are the settings for VS Code.
+
+If you want to include custom packages on our gitlab you might use install_dependencies.sh
+
+## Working with Jupyter notebooks
+
+You can work with Jupyter notebooks directly in VS code or use Jupyter lab.
+
+Start Jupyter lab in the container:
+
+```
+ju
+```
+
+Then follow the link and work in your browser on the jupyter notebooks.
+
+
+## Working with LaTeX
+
+The subfolder report has its own docker container with LaTeX.
+
+* Open a new VS Code window
+* Open the reports folder
+* Say ok to reopen it in the devcontainer
+
+Export figures to reports/figures. The path is already defined in src.data.config:
+
+```
+from src.data import config
+filename = config.figure_folder.joinpath("example.png")
+```
+
+Use functions in src/tools/ to convert output like csv, pdf, png for latex use.
+
+Use
+
+```
+make plots
+```
+in vifcontainer environment to redo all plots for the publication.
+
+
+Use
+
+```
+make convert_pptx
+```
+in {{ cookiecutter.project_name }} environment to convert all pptx files in presentations to pdf for use in the LaTeX report.
+
+
+## Data handling
+
+Small data sets like _csv_ files can be directly saved in _data/1raw_ and commited to the repo.
+For larger datasets and more complex data it is better to write a function which collects the data from another server or database.
+This can be done by writing a function in  src/data/make_dataset.py.
+
+Then you can simply run:
+```
+make data
+```
+
+You can also mount an external hardrive D by the line below to devcontainer.json
+```
+"mounts": ["source=d,target=/{{ cookiecutter.project_name }}/data/1raw/ssd,type=bind,consistency=cached"
+```
+
+## More info
+
+Template based on Based on [cookiecutter-data-science](http://drivendata.github.io/cookiecutter-data-science/)
+
+Contact thomas.goelles@v2c2.at

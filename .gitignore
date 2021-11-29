@@ -1,0 +1,23 @@
+docs/site/
+
+.env
+
+# OSX Junk
+.DS_Store
+
+# test cache
+.cache/*
+tests/__pycache__/*
+*.pytest_cache/
+
+
+*.ipynb_checkpoints
+._cookiecutter.json
+.DS_Store*
+work/library
+.vscode
+.idea
+.mypy_cache
+test/test*
+
+

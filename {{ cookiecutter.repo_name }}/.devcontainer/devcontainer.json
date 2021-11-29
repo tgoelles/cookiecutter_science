@@ -1,0 +1,49 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json or the definition README at
+// https://github.com/microsoft/vscode-dev-containers/tree/master/containers/python-3-miniconda
+{
+	"name": "{{ cookiecutter.repo_name }}",
+	"context": "..",
+	"dockerFile": "Dockerfile",
+	"workspaceFolder": "/{{ cookiecutter.repo_name }}",
+	"workspaceMount": "src=${localWorkspaceFolder},dst=/{{ cookiecutter.repo_name }},type=bind",
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"python.formatting.provider": "black",
+		"editor.formatOnSave": true,
+		"[latex]": {
+			"editor.wordWrap": "on",
+			"editor.formatOnSave": false,
+		},
+		"python.pythonPath": "/opt/conda/bin/python",
+		"python.linting.mypyEnabled": true,
+		"python.linting.enabled": true,
+		"python.linting.flake8Enabled": true,
+		"python.linting.flake8Args": [
+			"--max-line-length=88"
+		],
+		"python.analysis.extraPaths": [
+			"${localWorkspaceFolder}",
+			"/opt/conda/pkgs"
+		],
+		"python.linting.pylintEnabled": true,
+		"autoDocstring.docstringFormat": "google",
+		"python.linting.pylintPath": "/opt/conda/bin/pylint",
+		"cSpell.maxNumberOfProblems": 500,
+		"python.dataScience.alwaysTrustNotebooks": true,
+		"jupyter.alwaysTrustNotebooks": true
+	},
+	"postCreateCommand": "./install_dependencies.sh",
+	"extensions": [
+		"ms-python.python",
+		"njpwerner.autodocstring",
+		"ms-azuretools.vscode-docker",
+		"mhutchie.git-graph",
+		"eamodio.gitlens",
+		"tomoki1207.pdf",
+		"ms-azuretools.vscode-docker",
+		"streetsidesoftware.code-spell-checker",
+		"oderwat.indent-rainbow",
+		"gua.rainbow-brackets",
+		"ms-python.vscode-pylance"
+	],
+}
