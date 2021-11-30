@@ -53,17 +53,6 @@
 
 ```
 
-
-## Getting started
-
-
-Before the first start you need to login to our gitlab docker repo. You need to create an access token in your user setting on gitlab and use the token in the following command:
-
-```
-docker login registry-gitlab.v2c2.at -u YOUR_USERNAME -p YOUR_TOKEN
-```
-
-
 ## Important
 
 * Optimised for VS code. It should also work with other editors which would require some additional steps.
@@ -84,20 +73,11 @@ RUN conda install sqlalchemy
 
 And/Or change the devcontainer.json which are the settings for VS Code.
 
-If you want to include custom packages on our gitlab you might use install_dependencies.sh
+If you want to include custom packages you might use install_dependencies.sh
 
 ## Working with Jupyter notebooks
 
-You can work with Jupyter notebooks directly in VS code or use Jupyter lab.
-
-Start Jupyter lab in the container:
-
-```
-ju
-```
-
-Then follow the link and work in your browser on the jupyter notebooks.
-
+You should work with Jupyter notebooks directly in VS code.
 
 ## Working with LaTeX
 
@@ -152,4 +132,4 @@ You can also mount an external hardrive D by the line below to devcontainer.json
 
 Template based on Based on [cookiecutter-data-science](http://drivendata.github.io/cookiecutter-data-science/)
 
-Contact thomas.goelles@v2c2.at
+Contact thomas.goelles@gmail.com

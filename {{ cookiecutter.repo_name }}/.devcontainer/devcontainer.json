@@ -4,10 +4,7 @@
 	"name": "{{ cookiecutter.repo_name }}",
 	"context": "..",
 	"dockerFile": "Dockerfile",
-	"workspaceFolder": "/{{ cookiecutter.repo_name }}",
-	"workspaceMount": "src=${localWorkspaceFolder},dst=/{{ cookiecutter.repo_name }},type=bind",
 	"settings": {
-		"terminal.integrated.shell.linux": "/bin/bash",
 		"python.formatting.provider": "black",
 		"editor.formatOnSave": true,
 		"[latex]": {
@@ -40,10 +37,8 @@
 		"mhutchie.git-graph",
 		"eamodio.gitlens",
 		"tomoki1207.pdf",
-		"ms-azuretools.vscode-docker",
 		"streetsidesoftware.code-spell-checker",
 		"oderwat.indent-rainbow",
-		"gua.rainbow-brackets",
 		"ms-python.vscode-pylance"
 	],
 }
