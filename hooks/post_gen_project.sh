@@ -1,16 +1,18 @@
 #!/bin/bash
 # Create git repo
+# organisation qeustion
+# create a repository in an organization
+#  $ gh repo create cli/my-project
 read -p "Create a github repo? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-    read -p "github namespace [$USER]: " name
-    name=${name:-$USER}
     git init
     git add .
     git commit -m "initial commit"
-    git push --set-upstream https://github.com/{{ cookiecutter.repo_name }}.git master
-    git remote add origin https://github.com/{{ cookiecutter.repo_name }}.git
+    gh repo create {{ cookiecutter.repo_name }} --description {{ cookiecutter.description }}
+    git push --set-upstream origin master
+
 fi
 
 echo "Done."
