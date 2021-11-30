@@ -9,13 +9,8 @@ echo "git init"
 git init
 git add .
 git commit -m "initial commit"
-{%- if cookiecutter.github_organisation == "1" -%}
-echo "init personal repo"
-gh repo create {{ cookiecutter.repo_name }} --description {{ cookiecutter.description }}
-{% else %}
-echo "init organisation repo"
+echo "init repo at {{ cookiecutter.github_organisation }}"
 gh repo create {{ cookiecutter.github_organisation }}/{{ cookiecutter.repo_name }} --description {{ cookiecutter.description }}
-{% endif %}
 git push --set-upstream origin master
 {% endif %}
 
