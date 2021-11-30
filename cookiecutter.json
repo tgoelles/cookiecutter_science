@@ -1,5 +1,10 @@
 {
     "project_name": "project_name",
     "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
-    "description": "A short description of the project."
+    "description": "A short description of the project.",
+    "generate_git_repo": "y",
+    "github_organisation": [
+        "tgoelles",
+        "CC-MoRe"
+    ]
 }
