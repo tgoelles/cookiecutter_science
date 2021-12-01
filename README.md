@@ -1,3 +1,6 @@
+* environment.yml for custom packages => .devcontainer and Dockerfile
+* commented apt-get section in Dockerfile to add custom stuff
+
 # Cookiecutter for Science projects
 
 _A logical, reasonably standardized, but flexible project structure for doing and sharing Python data science work._
