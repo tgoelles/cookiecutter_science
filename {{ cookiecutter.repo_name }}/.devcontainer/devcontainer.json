@@ -30,7 +30,7 @@
 		"python.dataScience.alwaysTrustNotebooks": true,
 		"jupyter.alwaysTrustNotebooks": true
 	},
-	"postCreateCommand": "./install_dependencies.sh",
+	"postCreateCommand": "chmod u+x install_dependencies.sh; ./install_dependencies.sh",
 	"extensions": [
 		"ms-python.python",
 		"njpwerner.autodocstring",
