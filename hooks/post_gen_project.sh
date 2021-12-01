@@ -10,7 +10,7 @@ git init
 git add .
 git commit -m "initial commit"
 echo "init repo at {{ cookiecutter.github_organisation }}"
-gh && gh repo create {{ cookiecutter.github_organisation }}/{{ cookiecutter.repo_name }} --description {{ cookiecutter.description }} || echo "github CLI gh not installed"
+gh --version && gh repo create {{ cookiecutter.github_organisation }}/{{ cookiecutter.repo_name }} --description {{ cookiecutter.description }} || echo "github CLI gh not installed"
 git push --set-upstream origin master
 {% endif %}
 
