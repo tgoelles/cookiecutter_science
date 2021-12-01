@@ -14,7 +14,7 @@ Based on [cookiecutter-data-science](http://drivendata.github.io/cookiecutter-da
 ## Quick start:
 
 ``` bash
-  $ cookiecutter XXXX
+  $ cookiecutter https://github.com/tgoelles/cookiecutter_science
 ```
 
 
@@ -42,7 +42,7 @@ $ brew install cookiecutter
 * Go to the folder where you want to put the project (your local drive):
 
   ``` bash
-    $ cookiecutter XXXXX
+    $ cookiecutter https://github.com/tgoelles/cookiecutter_science
   ```
 
 * Answer the questions
