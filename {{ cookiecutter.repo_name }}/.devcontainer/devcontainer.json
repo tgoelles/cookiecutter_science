@@ -22,6 +22,7 @@
 			"${localWorkspaceFolder}",
 			"/opt/conda/pkgs"
 		],
+		"python.defaultInterpreterPath": "/opt/conda/bin/python",
 		"python.linting.pylintEnabled": true,
 		"autoDocstring.docstringFormat": "google",
 		"python.linting.pylintPath": "/opt/conda/bin/pylint",
