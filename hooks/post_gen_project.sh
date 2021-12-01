@@ -1,8 +1,4 @@
 #!/bin/bash
-# Create git repo
-# organisation qeustion
-# create a repository in an organization
-#  $ gh repo create cli/my-project
 
 {% if cookiecutter.generate_git_repo == 'y' -%}
 echo "git init"
