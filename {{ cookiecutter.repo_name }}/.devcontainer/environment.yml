@@ -1,0 +1,9 @@
+name: base
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # - streamit
+  - pip:
+      # - matplotlib
+prefix: /opt/conda
