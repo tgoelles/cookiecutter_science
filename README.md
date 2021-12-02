@@ -1,5 +1,3 @@
-* environment.yml for custom packages => .devcontainer and Dockerfile
-* commented apt-get section in Dockerfile to add custom stuff
 
 # Cookiecutter for Science projects
 
@@ -51,7 +49,7 @@ $ brew install cookiecutter
 * Answer the questions
 * Open the folder in VS Code (with installed remote development extension and running docker desktop)
 * Say OK to reopen the folder in a container (only asked the first time)
-* Read the README.md
+* Read the README.md there
 
 ## git and Github
 

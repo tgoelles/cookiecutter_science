@@ -63,17 +63,9 @@
 
 ## Project specific packages and settings
 
-Change Dockerfile in the .devcontainer folder if you want to install additional python packages.
+Change Dockerfile and environment.yml in the .devcontainer folder if you want to install additional python packages.
 
-For example add the new line:
-
-```
-RUN conda install sqlalchemy
-```
-
-And/Or change the devcontainer.json which are the settings for VS Code.
-
-If you want to include custom packages you might use install_dependencies.sh
+If you want to include custom not on pypi or github packages you might use install_dependencies.sh
 
 ## Working with Jupyter notebooks
 
@@ -101,7 +93,7 @@ Use
 ```
 make plots
 ```
-in vifcontainer environment to redo all plots for the publication.
+in to redo all plots for the publication.
 
 
 Use
