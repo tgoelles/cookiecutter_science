@@ -1,4 +1,4 @@
-FROM aergus/latex:2021-02-06
+FROM aergus/latex:2020-09-01
 
 RUN apt-get update \
     && apt-get -y install hunspell \
