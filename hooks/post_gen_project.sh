@@ -5,9 +5,16 @@ echo "git init"
 git init
 git add .
 git commit -m "initial commit"
-echo "init repo at {{ cookiecutter.github_organisation }}"
-gh --version && gh repo create {{ cookiecutter.github_organisation }}/{{ cookiecutter.repo_name }} --description {{ cookiecutter.description }} || echo "github CLI gh not installed"
-git push --set-upstream origin master
+echo "init repo at {{ cookiecutter.organisation }}"
+{% if cookiecutter.organisation == 'vif' -%}
+read -p "gitlab namespace [$USER]: " name
+name=${name:-$USER}
+git push --set-upstream https://gitlab.v2c2.at/$name/{{ cookiecutter.repo_name }}.git master
+git remote add origin https://gitlab.v2c2.at/$name/{{ cookiecutter.repo_name }}.git
+{% else %}
+gh repo create {{ cookiecutter.organisation }}/{{ cookiecutter.repo_name }} --description {{ cookiecutter.description }}
+{% endif %}
+
 {% endif %}
 
 cd {{ cookiecutter.repo_name }}

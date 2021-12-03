@@ -6,8 +6,9 @@
         "3.8"
     ],
     "generate_git_repo": "y",
-    "github_organisation": [
+    "organisation": [
         "tgoelles",
-        "CC-MoRe"
+        "CC-MoRe",
+        "vif"
     ]
 }
