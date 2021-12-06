@@ -1,7 +1,7 @@
 from pathlib import Path
 import os
 
-project_folder = Path("/workspaces/{{ cookiecutter.repo_name }}")
+project_folder = Path("/workspaces/{{ cookiecutter.project_name }}")
 data_folder = Path.joinpath(project_folder, "data")
 
 delivery_folder = Path.joinpath(project_folder.parent, "delivery")
