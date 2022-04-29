@@ -1,4 +1,4 @@
-FROM ghcr.io/tgoelles/python_docker:v0.3.3_py{{ cookiecutter.python_version }}
+FROM ghcr.io/tgoelles/python_docker:v0.3.5_py{{ cookiecutter.python_version }}
 
 ENV DEBIAN_FRONTEND=noninteractive
 
