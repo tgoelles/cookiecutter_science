@@ -74,6 +74,8 @@ git config --global user.email "your_name@gmail.com"
 ## Developer notes
 
 The Docker images are maintained at a separate repo.
+
 https://github.com/tgoelles/Python_docker
+
 https://github.com/tgoelles/LaTex_docker
 
