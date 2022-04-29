@@ -4,7 +4,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Add linux packages here
 # RUN apt-get update \
-#     # add packages here like && apt-get -y install WHATEVER WHATEVER2 \
+#     # add packages here like
+#     && apt-get -y install WHATEVER WHATEVER2 \
 #     # Clean up
 #     && apt-get autoremove -y \
 #     && apt-get clean -y \

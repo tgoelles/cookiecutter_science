@@ -3,7 +3,7 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  # - streamit
+  # - pytorch
   - pip:
       # - matplotlib
 prefix: /opt/conda
