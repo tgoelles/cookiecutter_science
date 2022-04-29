@@ -3,12 +3,9 @@
     "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
     "description": "A short description of the project.",
     "python_version": [
-        "3.8"
+        "3.8",
+        "3.9"
     ],
     "generate_git_repo": "y",
-    "organisation": [
-        "tgoelles",
-        "CC-MoRe",
-        "vif"
-    ]
+    "organisation": "tgoelles"
 }

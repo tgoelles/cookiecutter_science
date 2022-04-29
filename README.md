@@ -62,7 +62,7 @@ Do not work on the same folder on the network!
 A note for Windows user: if you want to use git inside the container (Recommended) you need to clone the repo from WSL,
 otherwise Windows  messes up the .git folder.
 
-Git inside the container uses the same .gitconfig as Windows. (it is copyied inside the container)
+Git inside the container uses the same .gitconfig as Windows. (it is copied inside the container)
 So make sure that user.email and user.name are set (in Powershell):
 
 ``` bash
@@ -73,7 +73,7 @@ git config --global user.email "your_name@gmail.com"
 
 ## Developer notes
 
-The Docker image is maintained at a seperate repo.
+The Docker image is maintained at a separate repo.
 https://github.com/tgoelles/Python_docker
 
-Everything should work on Apple M1 and Intel Apple primarily.
+
