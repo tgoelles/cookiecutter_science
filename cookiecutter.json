@@ -4,7 +4,8 @@
     "description": "A short description of the project.",
     "python_version": [
         "3.8",
-        "3.9"
+        "3.9",
+        "3.10"
     ],
     "generate_git_repo": "y",
     "organisation": "tgoelles"
