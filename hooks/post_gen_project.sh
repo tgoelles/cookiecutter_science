@@ -12,12 +12,11 @@ name=${name:-$USER}
 git push --set-upstream https://gitlab.v2c2.at/$name/{{ cookiecutter.repo_name }}.git master
 git remote add origin https://gitlab.v2c2.at/$name/{{ cookiecutter.repo_name }}.git
 {% else %}
-gh repo create {{ cookiecutter.organisation }}/{{ cookiecutter.repo_name }} --description {{ cookiecutter.description }}
+echo $PWD
+gh repo create {{ cookiecutter.organisation }}/{{ cookiecutter.repo_name }} --description {{ cookiecutter.description }} --source=. --private --push
 {% endif %}
 
 {% endif %}
-
-cd {{ cookiecutter.repo_name }}
 
 code && code -n . || echo "code command not found"
 
