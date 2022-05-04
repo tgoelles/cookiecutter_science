@@ -1,8 +1,4 @@
-FROM aergus/latex:2020-09-01
+FROM ghcr.io/tgoelles/latex_docker:v0.0.4
 
-RUN apt-get update --allow-releaseinfo-change \
-    && apt-get -y install hunspell \
-    && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
 
 CMD ["bash"]
