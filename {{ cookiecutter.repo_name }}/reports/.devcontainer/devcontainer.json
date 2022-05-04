@@ -23,7 +23,6 @@
 		// This will ignore your local shell user setting for Linux since shells like zsh are typically 
 		// not in base container images. You can also update this to an specific shell to ensure VS Code 
 		// uses the right one for terminals and tasks. For example, /bin/bash (or /bin/ash for Alpine).
-		"terminal.integrated.shell.linux": null,
 		"cSpell.maxNumberOfProblems": 500,
 		"latex-workshop.chktex.enabled": true,
 		"editor.formatOnSave": false,
@@ -35,7 +34,7 @@
 	// Uncomment the next line if you want to publish any ports.
 	// "appPort": [],
 	// Uncomment the next line to run commands after the container is created - for example installing git.
-	"postCreateCommand": "git config --global submodule.recurse true",
+	//"postCreateCommand": "git config --global submodule.recurse true",
 	// Add the IDs of extensions you want installed when the container is created in the array below.
 	"extensions": [
 		"james-yu.latex-workshop",
