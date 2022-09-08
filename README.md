@@ -15,7 +15,7 @@ Based on [cookiecutter-data-science](http://drivendata.github.io/cookiecutter-da
 ## Quick start:
 
 ``` bash
-  $ cookiecutter https://github.com/tgoelles/cookiecutter_science
+cookiecutter https://github.com/tgoelles/cookiecutter_science
 ```
 
 
@@ -29,13 +29,13 @@ Based on [cookiecutter-data-science](http://drivendata.github.io/cookiecutter-da
  - [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html) >= 1.4.0: This can be installed with pip or by conda depending on how you manage your Python packages:
 
 ``` bash
-$ pip install cookiecutter
+pip install cookiecutter
 ```
 
 or for Mac also:
 
 ``` bash
-$ brew install cookiecutter
+brew install cookiecutter
 ```
 
 ## Getting started
@@ -43,7 +43,7 @@ $ brew install cookiecutter
 * Go to the folder where you want to put the project (your local drive):
 
   ``` bash
-    $ cookiecutter https://github.com/tgoelles/cookiecutter_science
+  cookiecutter https://github.com/tgoelles/cookiecutter_science
   ```
 
 * Answer the questions
