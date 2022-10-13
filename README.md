@@ -21,7 +21,7 @@ cookiecutter https://github.com/tgoelles/cookiecutter_science
 
 ## Requirements:
 
- - git
+ - git (should be part of your OS or install it: https://github.com/git-guides/install-git)
  - a GitHub account
  - [github cli](https://cli.github.com/)
  - [docker desktop](https://www.docker.com/products/docker-desktop/)
