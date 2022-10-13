@@ -26,7 +26,7 @@ cookiecutter https://github.com/tgoelles/cookiecutter_science
  - [github cli](https://cli.github.com/)
  - [docker desktop](https://www.docker.com/products/docker-desktop/)
  - [VS Code](https://code.visualstudio.com/)
- - VS code extension: Remote development (by Microsoft)
+ - [VS code extension: Remote development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
  - [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html) >= 1.4.0: This can be installed with pip or by conda depending on how you manage your Python packages:
 
 ``` bash
