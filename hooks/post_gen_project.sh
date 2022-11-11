@@ -13,7 +13,7 @@ git push --set-upstream https://gitlab.v2c2.at/$name/{{ cookiecutter.repo_name }
 git remote add origin https://gitlab.v2c2.at/$name/{{ cookiecutter.repo_name }}.git
 {% else %}
 echo $PWD
-gh repo create {{ cookiecutter.organisation }}/{{ cookiecutter.repo_name }} --description {{ cookiecutter.description }} --source=. --private --push
+gh repo create {{ cookiecutter.organisation|lower }}/{{ cookiecutter.repo_name }} --description {{ cookiecutter.description }} --source=. --private --push
 {% endif %}
 
 {% endif %}
