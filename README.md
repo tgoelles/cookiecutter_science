@@ -15,27 +15,28 @@ Based on [cookiecutter-data-science](http://drivendata.github.io/cookiecutter-da
 ## Quick start:
 
 ``` bash
-  $ cookiecutter https://github.com/tgoelles/cookiecutter_science
+cookiecutter https://github.com/tgoelles/cookiecutter_science
 ```
 
 
 ## Requirements:
 
- - git
- - github cli
- - docker desktop
- - VS Code (optimised for it but should also work with other editors)
- - VS code extension: Remote development (by Microsoft)
+ - git (should be part of your OS or install it: https://github.com/git-guides/install-git)
+ - a GitHub account
+ - [github cli](https://cli.github.com/)
+ - [docker desktop](https://www.docker.com/products/docker-desktop/)
+ - [VS Code](https://code.visualstudio.com/)
+ - [VS code extension: Remote development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
  - [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html) >= 1.4.0: This can be installed with pip or by conda depending on how you manage your Python packages:
 
 ``` bash
-$ pip install cookiecutter
+pip install cookiecutter
 ```
 
 or for Mac also:
 
 ``` bash
-$ brew install cookiecutter
+brew install cookiecutter
 ```
 
 ## Getting started
@@ -43,7 +44,7 @@ $ brew install cookiecutter
 * Go to the folder where you want to put the project (your local drive):
 
   ``` bash
-    $ cookiecutter https://github.com/tgoelles/cookiecutter_science
+  cookiecutter https://github.com/tgoelles/cookiecutter_science
   ```
 
 * Answer the questions
