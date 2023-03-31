@@ -4,41 +4,41 @@
 	"name": "{{ cookiecutter.repo_name }}",
 	"context": "..",
 	"dockerFile": "Dockerfile",
-	"settings": {
-		"python.formatting.provider": "black",
-		"editor.formatOnSave": true,
-		"[latex]": {
-			"editor.wordWrap": "on",
-			"editor.formatOnSave": false,
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"njpwerner.autodocstring",
+				"ms-azuretools.vscode-docker",
+				"mhutchie.git-graph",
+				"eamodio.gitlens",
+				"tomoki1207.pdf",
+				"ms-azuretools.vscode-docker",
+				"streetsidesoftware.code-spell-checker",
+				"oderwat.indent-rainbow",
+				"GitHub.vscode-pull-request-github",
+				"charliermarsh.ruff"
+			],
+			"settings": {
+				"python.formatting.provider": "black",
+				"editor.formatOnSave": true,
+				"[latex]": {
+					"editor.wordWrap": "on",
+					"editor.formatOnSave": false,
+				},
+				"python.pythonPath": "/opt/conda/bin/python",
+				"python.linting.mypyEnabled": true,
+				"python.linting.enabled": true,
+				"python.linting.flake8Enabled": false,
+				"python.defaultInterpreterPath": "/opt/conda/bin/python",
+				"python.linting.pylintEnabled": false,
+				"autoDocstring.docstringFormat": "google",
+				"cSpell.maxNumberOfProblems": 500,
+				"python.dataScience.alwaysTrustNotebooks": true,
+				"jupyter.alwaysTrustNotebooks": true,
+				"notebook.formatOnSave.enabled": true
+			},
 		},
-		"python.pythonPath": "/opt/conda/bin/python",
-		"python.linting.mypyEnabled": true,
-		"python.linting.enabled": true,
-		"python.linting.flake8Enabled": true,
-		"python.linting.flake8Args": [
-			"--max-line-length=88"
-		],
-		"python.analysis.extraPaths": [
-			"${localWorkspaceFolder}",
-			"/opt/conda/pkgs"
-		],
-		"python.defaultInterpreterPath": "/opt/conda/bin/python",
-		"python.linting.pylintEnabled": true,
-		"autoDocstring.docstringFormat": "google",
-		"python.linting.pylintPath": "/opt/conda/bin/pylint",
-		"cSpell.maxNumberOfProblems": 500,
-		"python.dataScience.alwaysTrustNotebooks": true,
-		"jupyter.alwaysTrustNotebooks": true
 	},
 	"postCreateCommand": "chmod u+x install_dependencies.sh; ./install_dependencies.sh",
-	"extensions": [
-		"ms-python.python",
-		"njpwerner.autodocstring",
-		"ms-azuretools.vscode-docker",
-		"eamodio.gitlens",
-		"tomoki1207.pdf",
-		"streetsidesoftware.code-spell-checker",
-		"oderwat.indent-rainbow",
-		"ms-python.vscode-pylance"
-	],
 }
