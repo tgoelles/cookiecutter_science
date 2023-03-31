@@ -116,10 +116,15 @@ Then you can simply run:
 make data
 ```
 
-You can also mount an external hardrive D by the line below to devcontainer.json
+Or you can mount a folder with data to the container. For this you need to add the following line to devcontainer.json
+
 ```
-"mounts": ["source=d,target=/{{ cookiecutter.project_name }}/data/1raw/ssd,type=bind,consistency=cached"
+"mounts": ["source=WHEVEVER_YOUR_DATA_IS,target=/{{ cookiecutter.project_name }}/data/1raw/,type=bind,consistency=cached"
 ```
+
+WHEVEVER_YOUR_DATA_IS is the path to the data on the host machine like /home/user/data which is them mapped to the target paht in the container under data/1raw
+
+
 
 ## More info
 
