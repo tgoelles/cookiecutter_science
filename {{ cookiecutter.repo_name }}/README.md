@@ -18,7 +18,6 @@
     |   |-- 1raw                            <- The original, immutable data dump.
     |   |-- 2interim                        <- Intermediate data that has been transformed.
     |   `-- 3processed                      <- The final, canonical data sets for modelling or presentations.
-    |-- delivery                            <- Deliver to clients or internal.
     |-- notebooks                           <- Jupyter notebooks.
     |   `-- exploratory                     <- Data explorations
     |       `-- 1.0-tg-example.ipynb        <- Jupyter notebook with naming conventions. tg are initials
@@ -94,7 +93,8 @@ Use
 ```
 make plots
 ```
-in to redo all plots for the publication.
+in to redo all plots for the publication. This runs src/visualization/make_plots.py. So add all your final plot functions there.
+The idea is that you can run this command to redo all plots for the publication with one simple command. This saves a lot of time during the publication process.
 
 
 Use
