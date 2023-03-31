@@ -22,6 +22,7 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
+.ruff_cache
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -87,6 +88,8 @@ target/
 
 # Mypy cache
 .mypy_cache/
+
+# latex stuff
 environment_noversions.yml
 tmp.sh
 *.aux
