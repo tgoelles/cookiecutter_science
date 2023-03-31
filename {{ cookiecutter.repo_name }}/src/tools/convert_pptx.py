@@ -3,14 +3,13 @@ import glob
 import os
 from src.data import config
 
-slides_path = config.presentations_folder
+slides_path = config.PRESENTATIONS_FOLDER
 libreoffice_executable = "/usr/bin/libreoffice"
-pdf_path = config.figure_folder
+pdf_path = config.FIGURE_FOLDER
 
 
 def convert_pptx_as_pdf() -> None:
-    """ Convert all powerpoint slides to pdf.
-    """
+    """Convert all powerpoint slides to pdf."""
     print("converting pptx to pdf... ")
     for slide in slides_path.rglob("*.pptx"):
         print(slide.as_posix())
