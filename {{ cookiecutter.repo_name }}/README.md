@@ -60,6 +60,7 @@
 * Develop reusable functions in jupyter notebooks and then put them in the _src_ package (with docstring and typehints)
 * Open reports folder separate in a VS code window (own .devcontainer with LaTeX)
 * Some VS Code settings are already defined in devcontainer.json
+* the default shell inside the container is zsh with p10k theme.
 
 ## Project specific packages and settings
 

@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/zsh
 
 # A script to install all additional custom packages you will work on.
 # Execuded with devcontainer.json
