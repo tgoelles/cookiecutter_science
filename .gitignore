@@ -15,7 +15,7 @@ tests/__pycache__/*
 ._cookiecutter.json
 .DS_Store*
 work/library
-.vscode
+
 .idea
 .mypy_cache
 test/test*
