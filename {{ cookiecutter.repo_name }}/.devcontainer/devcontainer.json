@@ -18,7 +18,10 @@
 				"streetsidesoftware.code-spell-checker",
 				"oderwat.indent-rainbow",
 				"GitHub.vscode-pull-request-github",
-				"charliermarsh.ruff"
+				"charliermarsh.ruff",
+				"tamasfe.even-better-toml",
+				"GitHub.copilot",
+				"GitHub.copilot-chat"
 			],
 			"settings": {
 				"python.formatting.provider": "black",
@@ -41,5 +44,5 @@
 			},
 		},
 	},
-	"postCreateCommand": "chmod u+x install_dependencies.sh; ./install_dependencies.sh",
+	"postCreateCommand": "pip install --editable ."
 }

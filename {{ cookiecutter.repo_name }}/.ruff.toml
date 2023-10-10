@@ -1,5 +1,0 @@
-# black uses 88, to avoid too many warnings
-line-length = 120
-
-# target python version e.g. py310
-target-version = "py{{ cookiecutter.python_version|replace('.', '') }}"
