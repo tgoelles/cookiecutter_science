@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 {% if cookiecutter.generate_git_repo == 'y' -%}
 echo "git init"
