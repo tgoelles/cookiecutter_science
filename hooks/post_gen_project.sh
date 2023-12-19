@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! command -v gh &> /dev/null
 then
@@ -7,20 +7,23 @@ then
 fi
 
 
+
 {% if cookiecutter.generate_git_repo == 'y' -%}
 echo "git init"
 git init
 git add .
 git commit -m "initial commit"
-echo "init repo at {{ cookiecutter.organisation }}"
-{% if cookiecutter.organisation == 'vif' -%}
-read -p "gitlab namespace [$USER]: " name
-name=${name:-$USER}
-git push --set-upstream https://gitlab.v2c2.at/$name/{{ cookiecutter.repo_name }}.git master
-git remote add origin https://gitlab.v2c2.at/$name/{{ cookiecutter.repo_name }}.git
-{% else %}
+
+{% if cookiecutter.organisation == 'automatic' -%}
+GITHUB_USERNAME={{ cookiecutter.organisation|lower }}
+if [ -f github_username.txt ]; then
+    GITHUB_USERNAME=$(cat github_username.txt)
+else
+    GITHUB_USERNAME={{ cookiecutter.organisation|lower }}
+fi
+echo "using github organisation: "$GITHUB_USERNAME
 echo $PWD
-gh repo create {{ cookiecutter.organisation|lower }}/{{ cookiecutter.repo_name }} --description {{ cookiecutter.description }} --source=. --private --push
+gh repo create $GITHUB_USERNAME/{{ cookiecutter.repo_name }} --description {{ cookiecutter.description }} --source=. --private --push
 {% endif %}
 
 {% endif %}
