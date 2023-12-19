@@ -6,22 +6,22 @@ then
     exit 1
 fi
 
-
-
 {% if cookiecutter.generate_git_repo == 'y' -%}
 echo "git init"
 git init
 git add .
 git commit -m "initial commit"
 
-{% if cookiecutter.organisation == 'automatic' -%}
-GITHUB_USERNAME=$(gh api user --jq .login 2>/dev/null)
-{% else %}
-GITHUB_USERNAME={{ cookiecutter.organisation | lower}}
-{% endif %}
-echo "using github organisation: "$GITHUB_USERNAME
+REPO_OWNER=""
+if [ "{{ cookiecutter.organisation }}" == "automatic" ]; then
+    REPO_OWNER=$(gh api user --jq .login 2>/dev/null)
+else
+    REPO_OWNER="{{ cookiecutter.organisation | lower }}"
+fi
 
-gh repo create $GITHUB_USERNAME/{{ cookiecutter.repo_name }} --description {{ cookiecutter.description }} --source=. --private --push
+echo "using GitHub repository owner: $REPO_OWNER"
+
+gh repo create $REPO_OWNER/{{ cookiecutter.repo_name }} --description "{{ cookiecutter.description }}" --source=. --private --push
 
 {% endif %}
 
