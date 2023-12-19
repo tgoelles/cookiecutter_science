@@ -1,5 +1,12 @@
 #!/bin/sh
 
+if ! command -v gh &> /dev/null
+then
+    echo "GitHub CLI not installed. Please install it to continue."
+    exit 1
+fi
+
+
 {% if cookiecutter.generate_git_repo == 'y' -%}
 echo "git init"
 git init
