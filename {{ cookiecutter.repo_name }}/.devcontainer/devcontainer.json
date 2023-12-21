@@ -10,6 +10,7 @@
 				"ms-python.python",
 				"ms-toolsai.jupyter",
 				"ms-python.black-formatter",
+				"ms-python.mypy-type-checker",
 				"njpwerner.autodocstring",
 				"ms-azuretools.vscode-docker",
 				"mhutchie.git-graph",
