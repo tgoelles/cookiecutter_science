@@ -9,6 +9,7 @@
 			"extensions": [
 				"ms-python.python",
 				"ms-toolsai.jupyter",
+				"ms-python.black-formatter",
 				"njpwerner.autodocstring",
 				"ms-azuretools.vscode-docker",
 				"mhutchie.git-graph",
@@ -24,18 +25,14 @@
 				"GitHub.copilot-chat"
 			],
 			"settings": {
-				"python.formatting.provider": "black",
 				"editor.formatOnSave": true,
 				"[latex]": {
 					"editor.wordWrap": "on",
 					"editor.formatOnSave": false,
 				},
-				"python.pythonPath": "/opt/conda/bin/python",
-				"python.linting.mypyEnabled": true,
-				"python.linting.enabled": true,
-				"python.linting.flake8Enabled": false,
-				"python.defaultInterpreterPath": "/opt/conda/bin/python",
-				"python.linting.pylintEnabled": false,
+				"[python]": {
+					"editor.defaultFormatter": "ms-python.black-formatter",
+				},
 				"autoDocstring.docstringFormat": "google",
 				"cSpell.maxNumberOfProblems": 500,
 				"python.dataScience.alwaysTrustNotebooks": true,

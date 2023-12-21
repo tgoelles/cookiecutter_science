@@ -14,10 +14,14 @@
     |-- Makefile                            <- Makefile with commands like `make data`
     |-- README.md                           <- This readme
     |-- data
-    |   |-- 0external                       <- Data from third party sources.
-    |   |-- 1raw                            <- The original, immutable data dump.
-    |   |-- 2interim                        <- Intermediate data that has been transformed.
-    |   `-- 3processed                      <- The final, canonical data sets for modelling or presentations.
+    |   |-- 01_raw                          <- The original, immutable data dump.
+    |   |-- 02_intermediate                 <- Optional data model(s), which are introduced to type your raw data model(s)
+    |   |-- 03_primary                      <- Domain specific data model(s) containing cleansed
+    |   |-- 04_feature                      <- Analytics specific data model(s) containing a set of features defined against the primary data
+    |   |-- 05_model_input                  <- Analytics specific data model(s) containing all feature data against a common dimension
+    |   |-- 06_models                       <- Stored, serialised pre-trained machine learning models
+    |   |-- 07_models                       <- Stored, serialised pre-trained machine learning models
+    |   `-- 08_reporting                    <- Reporting data model(s) that are used to combine a set of primary, feature, model input and model output data
     |-- notebooks                           <- Jupyter notebooks.
     |   `-- exploratory                     <- Data explorations
     |       `-- 1.0-tg-example.ipynb        <- Jupyter notebook with naming conventions. tg are initials

@@ -11,6 +11,7 @@ Based on [cookiecutter-data-science](http://drivendata.github.io/cookiecutter-da
 * optimised for use with VS Code
 * added path definitions in the src python package
 * support for more custom python packages
+* kedro data structure
 
 ## Quick start:
 
