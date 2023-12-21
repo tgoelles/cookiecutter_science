@@ -40,6 +40,9 @@
 				"cSpell.maxNumberOfProblems": 500,
 				"python.dataScience.alwaysTrustNotebooks": true,
 				"jupyter.alwaysTrustNotebooks": true,
+				"jupyter.jupyterCommandLineArguments": [
+					"--allow-root"
+				],
 				"notebook.formatOnSave.enabled": true
 			},
 		},
