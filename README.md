@@ -1,15 +1,14 @@
 
 # Cookiecutter for Science projects
 
-_A logical, reasonably standardized, but flexible project structure for doing and sharing Python data science work._
-Based on [cookiecutter-data-science](http://drivendata.github.io/cookiecutter-data-science/) and enhanced by:
+A cookiecutter template for Science and Data Science projects where you have data, code and some form of dessimination.
 
-* docker based python environment
-* reports based on a LaTeX docker container
-* deleted some useless clutter
+* for Python but also for Julia and R
+* docker based and version controoled environment based on VS code Dev Containers
+* reports based on a LaTeX
 * optimised with data based publications in mind
 * optimised for use with VS Code
-* added path definitions in the src python package
+* added path definitions in the project_package python
 * support for more custom python packages
 * kedro data structure
 
@@ -28,7 +27,7 @@ cookiecutter https://github.com/tgoelles/cookiecutter_science
  - [docker desktop](https://www.docker.com/products/docker-desktop/)
  - [VS Code](https://code.visualstudio.com/)
  - [VS code extension: Remote development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
- - [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html) >= 1.4.0: This can be installed with pip or by conda depending on how you manage your Python packages:
+ - [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html) >= 2.0.0: This can be installed with pip or by conda depending on how you manage your Python packages:
 
 ``` bash
 pip install cookiecutter
@@ -49,7 +48,7 @@ brew install cookiecutter
   ```
 
 * Answer the questions
-* Open the folder in VS Code (with installed remote development extension and running docker desktop)
+* A new VS code window opens automatically
 * Say OK to reopen the folder in a container (only asked the first time)
 * Read the README.md there
 

@@ -14,11 +14,11 @@ PYTHON_INTERPRETER = python
 
 ## Make Dataset requirements
 data:
-	$(PYTHON_INTERPRETER) src/data/make_dataset.py
+	$(PYTHON_INTERPRETER) code/python_package/data/make_dataset.py
 
 ## All plots for publication
 plots:
-	$(PYTHON_INTERPRETER) src/visualization/make_plots.py
+	$(PYTHON_INTERPRETER) code/python_package/visualization/make_plots.py
 
 ## Delete all compiled Python and latex files files
 clean:
