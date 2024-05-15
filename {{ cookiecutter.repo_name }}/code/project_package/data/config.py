@@ -1,12 +1,12 @@
 from pathlib import Path
 
-PROJECT_FOLDER = Path("/workspaces/{{ cookiecutter.project_name }}")
+PROJECT_FOLDER = Path("/workspace")
 
 DATA_FOLDER = Path.joinpath(PROJECT_FOLDER, "data")
 DISSEMINATION_FOLDER = Path.joinpath(PROJECT_FOLDER, "dissemination")
 
 
-FIGURE_FOLDER = Path.joinpath(DISSEMINATION_FOLDER, "figures").joinpath("figures")
+FIGURES_FOLDER = Path.joinpath(DISSEMINATION_FOLDER, "figures")
 PRESENTATIONS_FOLDER = Path.joinpath(DISSEMINATION_FOLDER, "presentations")
 REPORTS_FOLDER = Path.joinpath(DISSEMINATION_FOLDER, "reports")
 

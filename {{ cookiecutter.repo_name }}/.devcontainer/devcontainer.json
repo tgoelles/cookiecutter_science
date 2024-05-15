@@ -25,17 +25,20 @@
 		"ghcr.io/schlich/devcontainer-features/powerlevel10k:1": {},
 		"ghcr.io/prulloac/devcontainer-features/latex:1": {
 			"scheme": "basic",
-			"mirror": "https://mirror.ctan.org/systems/texlive/tlnet/"
+			"mirror": "https://mirror.ctan.org/systems/texlive/tlnet/",
 		}
 	},
 	"customizations": {
 		"vscode": {
 			"extensions": [
 				"ms-toolsai.jupyter",
+				"ms-python.python",
 				"charliermarsh.ruff",
 				"ms-python.mypy-type-checker",
 				"njpwerner.autodocstring",
 				"oderwat.indent-rainbow",
+				"janisdd.vscode-edit-csv",
+				"ms-toolsai.datawrangler"
 			],
 			"settings": {
 				"editor.formatOnSave": true,
@@ -94,9 +97,6 @@
 						]
 					},
 				],
-				"[python]": {
-					"editor.defaultFormatter": "ms-python.black-formatter",
-				},
 				"python.pythonPath": "/opt/conda/bin/python",
 				"autoDocstring.docstringFormat": "google",
 				"cSpell.maxNumberOfProblems": 500,
@@ -116,5 +116,7 @@
 			},
 		},
 	},
-	"postCreateCommand": "pip install --editable code"
+	"workspaceFolder": "/workspace",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+	"postCreateCommand": "pip install --editable code && sudo tlmgr install biblatex biber && sudo tlmgr path add"
 }

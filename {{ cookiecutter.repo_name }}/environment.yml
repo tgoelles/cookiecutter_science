@@ -22,4 +22,5 @@ dependencies:
       - jupyterlab
       - jupyter
       - notebook
+      - matplotlib
 prefix: /opt/conda
