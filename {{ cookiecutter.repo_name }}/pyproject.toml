@@ -1,6 +1,6 @@
 [project]
-name = "src"
-description = "local src package"
+name = "project_package"
+description = "local Python package"
 version = "0.1.0"
 authors = [{ name = "Thomas Gölles", email = "thomas.goelles@gmail.com" }]
 
