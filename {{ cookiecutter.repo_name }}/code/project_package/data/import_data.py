@@ -1,4 +1,4 @@
-from src.data import config
+from . import config
 from pathlib import Path
 
 

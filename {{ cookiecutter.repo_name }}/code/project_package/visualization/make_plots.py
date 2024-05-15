@@ -1,4 +1,4 @@
-from src.visualization import visualize
+from . import visualize
 
 print("redoing all plots")
 
