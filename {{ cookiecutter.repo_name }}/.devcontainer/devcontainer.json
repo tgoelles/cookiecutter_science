@@ -116,5 +116,5 @@
 			},
 		},
 	},
-	"postCreateCommand": "pip install --editable ."
+	"postCreateCommand": "pip install --editable code"
 }
