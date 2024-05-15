@@ -43,6 +43,57 @@
 					"editor.wordWrap": "on",
 					"editor.formatOnSave": false,
 				},
+				"latex-workshop.latex.tools": [
+					{
+						"name": "pdflatex",
+						"command": "pdflatex",
+						"args": [
+							"-synctex=1",
+							"-interaction=nonstopmode",
+							"-file-line-error",
+							"-output-directory=%OUTDIR%",
+							"%DOC%"
+						],
+						"env": {}
+					},
+					{
+						"name": "biber",
+						"command": "biber",
+						"args": [
+							"%DOCFILE%"
+						],
+						"env": {}
+					}
+				],
+				"latex-workshop.latex.recipes": [
+					{
+						"name": "pdflatex -> biber -> pdflatex * 2",
+						"tools": [
+							"pdflatex",
+							"biber",
+							"pdflatex",
+							"pdflatex"
+						]
+					},
+					{
+						"name": "latexmk",
+						"tools": [
+							"latexmk"
+						]
+					},
+					{
+						"name": "latexmk (lualatex)",
+						"tools": [
+							"lualatexmk"
+						]
+					},
+					{
+						"name": "latexmk (xelatex)",
+						"tools": [
+							"xelatexmk"
+						]
+					},
+				],
 				"[python]": {
 					"editor.defaultFormatter": "ms-python.black-formatter",
 				},
