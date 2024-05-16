@@ -126,8 +126,9 @@ Available Tasks
 
 	•	Make Data: Generates the dataset by running the data creation scripts.
 	•	Make Plots: Creates all plots for the publication.
-	•	Make Report: Compiles the LaTeX report.
-	•	Clean: Deletes all compiled Python and LaTeX files.
+	•	Make Paper: Compiles the LaTeX paper.
+	•	Make Clean: Deletes all temporary compiled Python and LaTeX files.
+	•	Make delete_demo: Deletes all demo files.
 
 To run a task:
 
