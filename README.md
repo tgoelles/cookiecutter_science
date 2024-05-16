@@ -67,10 +67,3 @@ Ensure `user.email` and `user.name` are set (in PowerShell):
 git config --global user.name "your_name"
 git config --global user.email "your_email@gmail.com"
 ```
-
-## Developer Notes
-
-The Docker images are maintained in separate repositories:
-
-- [Python Docker Image](https://github.com/tgoelles/Python_docker)
-- [LaTeX Docker Image](https://github.com/tgoelles/LaTex_docker)
