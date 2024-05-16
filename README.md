@@ -4,7 +4,7 @@ A cookiecutter template for science and data science projects that include data,
 
 - Optimized for use with VS Code
 - Optimized for data-based publications
-- Supports Python, Julia, and R
+- Optimised for use with Python but could also be used with Julia, and R
 - Docker-based, version-controlled environment using VS Code Dev Containers
 - use of Dev container Features with pre-installed, Python, oh-my-zsh and LaTeX
 - use of VS Code tasks to trigger data collection, plotting and paper compilation
