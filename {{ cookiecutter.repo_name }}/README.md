@@ -118,6 +118,25 @@ Or mount a data folder to the container by adding the following line to `devcont
 
 Replace `WHEREVER_YOUR_DATA_IS` with the path to the data on the host machine, such as `/home/user/data`, which will be mapped to `data/01_raw` in the container.
 
+## Running Tasks in VS Code
+
+This project integrates several tasks using the Makefile. You can run these tasks directly from VS Code using the Tasks: Run Task command from the Command Palette (Ctrl+Shift+P).
+
+Available Tasks
+
+	•	Make Data: Generates the dataset by running the data creation scripts.
+	•	Make Plots: Creates all plots for the publication.
+	•	Make Report: Compiles the LaTeX report.
+	•	Clean: Deletes all compiled Python and LaTeX files.
+
+To run a task:
+
+	1.	Open the Command Palette (Ctrl+Shift+P).
+	2.	Select Tasks: Run Task.
+	3.	Choose the desired task from the list.
+
+These tasks are configured in the .vscode/tasks.json file.
+
 ## More Info
 
 This template is inspired by [cookiecutter-data-science](http://drivendata.github.io/cookiecutter-data-science/) and kedro.

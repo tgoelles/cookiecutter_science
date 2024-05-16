@@ -37,8 +37,8 @@
 				"ms-python.mypy-type-checker",
 				"njpwerner.autodocstring",
 				"oderwat.indent-rainbow",
-				"janisdd.vscode-edit-csv",
-				"ms-toolsai.datawrangler"
+				"ms-toolsai.datawrangler",
+				"mechatroner.rainbow-csv"
 			],
 			"settings": {
 				"editor.formatOnSave": true,

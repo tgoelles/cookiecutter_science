@@ -1,9 +1,10 @@
-from . import visualize
+from project_package.visualization.visualize import demo_fig
 
-print("redoing all plots")
 
-# ADD All PLOTTING FUNCTIONS HERE
+if __name__ == "__main__":
+    print("redoing all plots")
 
-print("WARNING: Figures made with powerpoint might need some manual updating")
+    # ADD All PLOTTING FUNCTIONS HERE
+    demo_fig()
 
-print("done")
+    print("done")
