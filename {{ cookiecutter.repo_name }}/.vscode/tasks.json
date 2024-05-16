@@ -1,0 +1,55 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Make: data",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "data"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Make: plots",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "plots"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Make: report",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "report"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Make: clean",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "clean"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Make: delete_demo",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "delete_demo"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        }
+    ]
+}

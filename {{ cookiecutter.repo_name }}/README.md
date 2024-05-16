@@ -5,133 +5,140 @@
 
 ## File Structure
 
-
 ```
-    |-- .devcontainer                       <- definition of the docker container and environment for VS Code.
-    |   |-- Dockerfile                      <- Defines the docker container.
-    |   |-- devcontainer.json               <- Defines the devcontainer settings for VS Code.
-    |-- install_dependecies.sh              <- To handle custom python packages
-    |-- Makefile                            <- Makefile with commands like `make data`
-    |-- README.md                           <- This readme
-    |-- data
-    |   |-- 01_raw                          <- The original, immutable data dump.
-    |   |-- 02_intermediate                 <- Optional data model(s), which are introduced to type your raw data model(s)
-    |   |-- 03_primary                      <- Domain specific data model(s) containing cleansed
-    |   |-- 04_feature                      <- Analytics specific data model(s) containing a set of features defined against the primary data
-    |   |-- 05_model_input                  <- Analytics specific data model(s) containing all feature data against a common dimension
-    |   |-- 06_models                       <- Stored, serialised pre-trained machine learning models
-    |   |-- 07_models                       <- Stored, serialised pre-trained machine learning models
-    |   `-- 08_reporting                    <- Reporting data model(s) that are used to combine a set of primary, feature, model input and model output data
-    |-- notebooks                           <- Jupyter notebooks.
-    |   `-- exploratory                     <- Data explorations
-    |       `-- 1.0-tg-example.ipynb        <- Jupyter notebook with naming conventions. tg are initials
-    |-- presentations                       <- All related powerpoint files, especially for Deliverables.
-    |-- references                          <- Data dictionaries, manuals, papers and all other explanatory materials.
-    |-- reports                             <- Latex based reports
-    |   |-- .devcontainer                   <- Latex docker container
-    |   `-- figures                         <- Figures for reports generated with python.
-    |-- setup.py                            <- Setup file of the src package.
-    `-- src                                 <- Source code for use in this project.
-        |-- __init__.py                     <- Makes src a Python module.
-        |-- data                            <- Scripts to download, generate and parse data
-        |   |-- __init__.py
-        |   |-- config.py                   <- Project wide path definitions.
-        |   |-- example.py                  <- Just an example on how the add your own source files.
-        |   |-- import_data.py              <- Functions to read raw data.
-        |   `-- make_dataset.py             <- Scripts to download or generate data (used in the Makefile)
-        |-- features                        <- Scripts and functions to turn raw data into features for modelling.
-        |-- models                          <- Scripts and functions to train models and then use trained models.
-        |   |-- __init__.py
-        |   |-- predict_model.py
-        |   `-- train_model.py
-        |-- tools                           <- Scripts and Functions for general use, like converters.
-        |   |-- __init__.py
-        |   |-- convert_latex.py            <- Functions to convert elements for use in latex
-        |   |-- convert_pictures.py         <- Functions to convert pictures
-        |   |-- convert_pptx.py             <- Functions and scripts to convert powerpoint files
-        `-- visualization                   <- Scripts and functions to create visualizations.
-            |-- __init__.py
-            |-- make_plots.py               <- Scripts to make all plots for the publication.
-            `-- visualize.py                <- Functions to produce final plots.
-
+├── .devcontainer                      # Definition of the Docker container and environment for VS Code
+│   ├── Dockerfile                     # Defines the Docker container
+│   ├── devcontainer.json              # Defines the devcontainer settings for VS Code
+│   └── noop.txt                       # Placeholder file to ensure the COPY instruction does not fail if no environment.yml exists
+├── .gitattributes                     # Git attributes for handling line endings and merge strategies
+├── .gitignore                         # Git ignore file to exclude files and directories from version control
+├── Makefile                           # Makefile with commands like `make data` and `make clean`
+├── README.md                          # Project readme
+├── code                               # Source code and notebooks
+│   ├── notebooks                      # Jupyter notebooks
+│   │   └── exploratory                # Data explorations
+│   │       └── 1.0-tg-example.ipynb   # Jupyter notebook with naming conventions. tg are initials
+│   ├── project_package                # Project-specific Python package
+│   │   ├── __init__.py                # Makes project_package a Python module
+│   │   ├── data                       # Scripts to download, generate and parse data
+│   │   │   ├── __init__.py
+│   │   │   ├── config.py              # Project-wide path definitions
+│   │   │   ├── example.py             # Example script
+│   │   │   ├── import_data.py         # Functions to read raw data
+│   │   │   └── make_dataset.py        # Scripts to download or generate data (used in the Makefile)
+│   │   ├── tools                      # Scripts and functions for general use
+│   │   │   ├── __init__.py
+│   │   │   └── convert_latex.py       # Functions to convert elements for use in LaTeX
+│   │   └── visualization              # Scripts and functions to create visualizations
+│   │       ├── __init__.py
+│   │       ├── make_plots.py          # Scripts to make all plots for the publication
+│   │       └── visualize.py           # Functions to produce final plots
+│   └── pyproject.toml                 # Configuration file for the project
+├── data                               # Data directories
+│   ├── 01_raw                         # The original, immutable data dump
+│   │   └── demo.csv                   # Example raw data file
+│   ├── 02_intermediate                # Optional data model(s) to type your raw data model(s)
+│   ├── 03_primary                     # Domain-specific data model(s) containing cleansed data
+│   ├── 04_feature                     # Analytics-specific data model(s) containing a set of features defined against the primary data
+│   ├── 05_model_input                 # Analytics-specific data model(s) containing all feature data against a common dimension
+│   ├── 06_models                      # Stored, serialized pre-trained machine learning models
+│   ├── 07_model_output                # Output from trained machine learning models
+│   └── 08_reporting                   # Reporting data model(s) used to combine primary, feature, model input, and model output data
+├── dissemination                      # Materials for dissemination
+│   ├── figures                        # Figures for paper generated with Python
+│   │   └── demo.png                   # Example figure file
+│   ├── presentations                  # All related PowerPoint files, especially for deliverables
+│   └── papers                         # LaTeX-based papers
+│       └── minimal.tex                # Example LaTeX report
+├── environment.yml                    # Conda environment configuration file
+└── literature                         # References and explanatory materials
+    └── references.bib                 # Bibliography file for LaTeX documents
 ```
 
 ## Important
 
-* Optimised for VS code. It should also work with other editors which would require some additional steps.
-* Raw data is immutable (do not change it!)
-* Develop reusable functions in jupyter notebooks and then put them in the _src_ package (with docstring and typehints)
-* Open reports folder separate in a VS code window (own .devcontainer with LaTeX)
-* Some VS Code settings are already defined in devcontainer.json
-* the default shell inside the container is zsh with p10k theme.
+- **Raw data is immutable**: Do not change the data in `data/01_raw`.
+- **Reusable functions**: Develop reusable functions in Jupyter notebooks and then put them in the `project_package` with docstrings and type hints.
+- **VS Code settings**: Some settings are already defined in `devcontainer.json`.
+- **Default shell**: The default shell inside the container is zsh with the p10k theme.
 
-## Project specific packages and settings
+## Project-Specific Packages and Settings
 
-Change Dockerfile and environment.yml in the .devcontainer folder if you want to install additional python packages.
+You can customize the development environment in multiple ways:
+- **Add Python packages**: Modify the `environment.yml` file to include additional Python packages.
+- **Add Dev Container features**: Use the VS Code command `Dev Container: Configure Container Features` to add features like R, Julia, and more.
+- **Modify Dockerfile**: Update the Dockerfile in `.devcontainer` to add additional software not available as Dev Container features.
+- **Install LaTeX packages**: Add LaTeX packages using the `postCreateCommand` in `devcontainer.json`.
 
-If you want to include custom not on pypi or github packages you might use install_dependencies.sh
+## Working with Jupyter Notebooks
 
-## Working with Jupyter notebooks
-
-You should work with Jupyter notebooks directly in VS code.
+Use Jupyter notebooks directly in VS Code. It supports many useful functionalities.
 
 ## Working with LaTeX
 
-The subfolder report has its own docker container with LaTeX.
+An example LaTeX file is provided in `dissemination/reports`. The LaTeX extension is also pre-installed. To compile the LaTeX file:
+- Open the file.
+- Use the TeX symbol on the side panel.
+- Select `Build LaTeX project` and use the recipe: `pdflatex -> biber -> pdflatex*2`.
 
-* Open a new VS Code window
-* Open the reports folder
-* Say ok to reopen it in the devcontainer
+Export figures to `dissemination/figures`. The path is already defined in `project_package.data.config`:
 
-Export figures to reports/figures. The path is already defined in src.data.config:
+```python
+from project_package.data import config
 
+filename = config.FIGURES_FOLDER.joinpath("example.png")
 ```
-from src.data import config
-filename = config.figure_folder.joinpath("example.png")
-```
 
-Use functions in src/tools/ to convert output like csv, pdf, png for latex use.
+Use functions in `project_package/tools/` to convert output like CSV, PDF, PNG for LaTeX use.
 
-Use
+To redo all plots for the publication, run:
 
-```
+```sh
 make plots
 ```
-in to redo all plots for the publication. This runs src/visualization/make_plots.py. So add all your final plot functions there.
-The idea is that you can run this command to redo all plots for the publication with one simple command. This saves a lot of time during the publication process.
 
+This command runs `src/visualization/make_plots.py`. Add all your final plot functions there to regenerate all plots for the publication with one command, saving time during the publication process.
 
-Use
+## Data Handling
 
-```
-make convert_pptx
-```
-in {{ cookiecutter.project_name }} environment to convert all pptx files in presentations to pdf for use in the LaTeX report.
+- **Small datasets**: Save small datasets like CSV files directly in `data/01_raw` and commit them to the repo.
+- **Collect data from external sources**: Write functions to collect data from servers or databases in `code/project_package/data/make_dataset.py`.
 
+To run the data collection function, execute:
 
-## Data handling
-
-Small data sets like _csv_ files can be directly saved in _data/1raw_ and commited to the repo.
-For larger datasets and more complex data it is better to write a function which collects the data from another server or database.
-This can be done by writing a function in  src/data/make_dataset.py.
-
-Then you can simply run:
-```
+```sh
 make data
 ```
 
-Or you can mount a folder with data to the container. For this you need to add the following line to devcontainer.json
+Or mount a data folder to the container by adding the following line to `devcontainer.json`:
 
+```json
+"mounts": ["source=WHEREVER_YOUR_DATA_IS,target=/workspace/data/01_raw/,type=bind,consistency=cached"]
 ```
-"mounts": ["source=WHEVEVER_YOUR_DATA_IS,target=/{{ cookiecutter.project_name }}/data/1raw/,type=bind,consistency=cached"
-```
 
-WHEVEVER_YOUR_DATA_IS is the path to the data on the host machine like /home/user/data which is them mapped to the target paht in the container under data/1raw
+Replace `WHEREVER_YOUR_DATA_IS` with the path to the data on the host machine, such as `/home/user/data`, which will be mapped to `data/01_raw` in the container.
 
+## Running Tasks in VS Code
 
+This project integrates several tasks using the Makefile. You can run these tasks directly from VS Code using the Tasks: Run Task command from the Command Palette (Ctrl+Shift+P).
 
-## More info
+Available Tasks
 
-Template based on Based on [cookiecutter-data-science](http://drivendata.github.io/cookiecutter-data-science/)
+	•	Make Data: Generates the dataset by running the data creation scripts.
+	•	Make Plots: Creates all plots for the publication.
+	•	Make Report: Compiles the LaTeX report.
+	•	Clean: Deletes all compiled Python and LaTeX files.
 
-Contact thomas.goelles@gmail.com
+To run a task:
+
+	1.	Open the Command Palette (Ctrl+Shift+P).
+	2.	Select Tasks: Run Task.
+	3.	Choose the desired task from the list.
+
+These tasks are configured in the .vscode/tasks.json file.
+
+## More Info
+
+This template is inspired by [cookiecutter-data-science](http://drivendata.github.io/cookiecutter-data-science/) and kedro.
+
+Contact: thomas.goelles@gmail.com

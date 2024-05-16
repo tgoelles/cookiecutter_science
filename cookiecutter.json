@@ -2,12 +2,6 @@
     "project_name": "project_name",
     "repo_name": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
     "description": "A short description of the project.",
-    "python_version": [
-        "3.9",
-        "3.10",
-        "3.11",
-        "3.12"
-    ],
     "generate_git_repo": "y",
     "organisation": "automatic"
 }

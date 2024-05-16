@@ -1,7 +1,7 @@
 import os
-from src.data import config
+from project_package.data import config
 
-folder_name = config.FIGURE_FOLDER.as_posix()
+folder_name = config.FIGURES_FOLDER.as_posix()
 
 
 def csv_for_latex() -> None:
@@ -9,7 +9,7 @@ def csv_for_latex() -> None:
     command = "rm " + folder_name + "/*_latex.csv"
     os.system(command)
 
-    for file in config.FIGURE_FOLDER.glob("*.csv"):
+    for file in config.FIGURES_FOLDER.glob("*.csv"):
         command1 = "sed s/{/\\\\\\\citep{/g "
         command2 = "sed s/}/}\\\\\\\\\\\\\\\\/g "
         command3 = "sed s/\\'//g "

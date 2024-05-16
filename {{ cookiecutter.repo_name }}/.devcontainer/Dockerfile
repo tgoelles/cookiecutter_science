@@ -1,20 +1,17 @@
-FROM ghcr.io/tgoelles/python_docker:v0.5.7_py{{ cookiecutter.python_version }}
+FROM mcr.microsoft.com/devcontainers/miniconda:0-3
 
-ENV DEBIAN_FRONTEND=noninteractive
+# Copy environment.yml (if found) to a temp location so we update the environment. Also
+# copy "noop.txt" so the COPY instruction does not fail if no environment.yml exists.
+COPY environment.yml* .devcontainer/noop.txt /tmp/conda-tmp/
+RUN  /opt/conda/bin/conda update conda
+RUN if [ -f "/tmp/conda-tmp/environment.yml" ]; then umask 0002 && /opt/conda/bin/conda env update -n base -f /tmp/conda-tmp/environment.yml; fi \
+    && rm -rf /tmp/conda-tmp
 
-# Add linux packages here
-# RUN apt-get update \
-#     # add packages here like
-#     && apt-get -y install WHATEVER WHATEVER2 \
-#     # Clean up
-#     && apt-get autoremove -y \
-#     && apt-get clean -y \
-#     && rm -rf /var/lib/apt/lists/*
+# [Optional] Uncomment to install a different version of Python than the default
+# RUN conda install -y python=3.6 \
+#     && pip install --no-cache-dir pipx \
+#     && pipx reinstall-all
 
-
-# Add python packages to the environment.yml file and uncommend here
-# COPY .devcontainer/environment.yml /tmp/environment.yml
-# RUN conda env update --file /tmp/environment.yml
-
-# Switch back to dialog for any ad-hoc use of apt-get
-ENV DEBIAN_FRONTEND=""
+# [Optional] Uncomment this section to install additional OS packages.
+# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+#     && apt-get -y install --no-install-recommends <your-package-list-here>

@@ -2,28 +2,44 @@
 // https://github.com/microsoft/vscode-dev-containers/tree/master/containers/python-3-miniconda
 {
 	"name": "{{ cookiecutter.repo_name }}",
-	"context": "..",
-	"dockerFile": "Dockerfile",
+	"build": {
+		"context": "..",
+		"dockerfile": "Dockerfile"
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"installZsh": true,
+			"configureZshAsDefaultShell": true,
+			"installOhMyZsh": true,
+			"installOhMyZshConfig": true,
+			"upgradePackages": true,
+			"username": "vscode",
+			"userUid": "automatic",
+			"userGid": "1001"
+		},
+		"ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
+			"plugins": "zsh-autosuggestions",
+			"omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions",
+			"username": "vscode"
+		},
+		"ghcr.io/schlich/devcontainer-features/powerlevel10k:1": {},
+		"ghcr.io/prulloac/devcontainer-features/latex:1": {
+			"scheme": "basic",
+			"mirror": "https://mirror.ctan.org/systems/texlive/tlnet/",
+			"packages": "biblatex biber"
+		}
+	},
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"ms-python.python",
 				"ms-toolsai.jupyter",
-				"ms-python.black-formatter",
+				"ms-python.python",
+				"charliermarsh.ruff",
 				"ms-python.mypy-type-checker",
 				"njpwerner.autodocstring",
-				"ms-azuretools.vscode-docker",
-				"mhutchie.git-graph",
-				"eamodio.gitlens",
-				"tomoki1207.pdf",
-				"ms-azuretools.vscode-docker",
-				"streetsidesoftware.code-spell-checker",
 				"oderwat.indent-rainbow",
-				"GitHub.vscode-pull-request-github",
-				"charliermarsh.ruff",
-				"tamasfe.even-better-toml",
-				"GitHub.copilot",
-				"GitHub.copilot-chat"
+				"ms-toolsai.datawrangler",
+				"mechatroner.rainbow-csv"
 			],
 			"settings": {
 				"editor.formatOnSave": true,
@@ -31,9 +47,57 @@
 					"editor.wordWrap": "on",
 					"editor.formatOnSave": false,
 				},
-				"[python]": {
-					"editor.defaultFormatter": "ms-python.black-formatter",
-				},
+				"latex-workshop.latex.tools": [
+					{
+						"name": "pdflatex",
+						"command": "pdflatex",
+						"args": [
+							"-synctex=1",
+							"-interaction=nonstopmode",
+							"-file-line-error",
+							"-output-directory=%OUTDIR%",
+							"%DOC%"
+						],
+						"env": {}
+					},
+					{
+						"name": "biber",
+						"command": "biber",
+						"args": [
+							"%DOCFILE%"
+						],
+						"env": {}
+					}
+				],
+				"latex-workshop.latex.recipes": [
+					{
+						"name": "pdflatex -> biber -> pdflatex * 2",
+						"tools": [
+							"pdflatex",
+							"biber",
+							"pdflatex",
+							"pdflatex"
+						]
+					},
+					{
+						"name": "latexmk",
+						"tools": [
+							"latexmk"
+						]
+					},
+					{
+						"name": "latexmk (lualatex)",
+						"tools": [
+							"lualatexmk"
+						]
+					},
+					{
+						"name": "latexmk (xelatex)",
+						"tools": [
+							"xelatexmk"
+						]
+					},
+				],
 				"python.pythonPath": "/opt/conda/bin/python",
 				"autoDocstring.docstringFormat": "google",
 				"cSpell.maxNumberOfProblems": 500,
@@ -53,5 +117,7 @@
 			},
 		},
 	},
-	"postCreateCommand": "pip install --editable ."
+	"workspaceFolder": "/workspace",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+	"postCreateCommand": "pip install --editable code"
 }
