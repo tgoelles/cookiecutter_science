@@ -12,7 +12,7 @@ A cookiecutter template for science and data science projects that include data,
 - Added path definitions in the `project_package` Python module
 - Kedro-inspired data folder structure
 
-For more detailed information, please see the [additional README]({{ cookiecutter.repo_name }}/README.md).
+For more detailed information, please see the [additional README](./%7B%7B%20cookiecutter.repo_name%20%7D%7D/README.md)).
 
 ## Quick Start
 
