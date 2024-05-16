@@ -12,6 +12,7 @@ A cookiecutter template for science and data science projects that include data,
 - Added path definitions in the `project_package` Python module
 - Kedro-inspired data folder structure
 
+For more info see the [readme of the resulting project]({{ cookiecutter.repo_name }}/README.md)
 
 ## Quick Start
 
@@ -27,7 +28,7 @@ cookiecutter https://github.com/tgoelles/cookiecutter_science
 - **Docker Desktop**: Install from [here](https://www.docker.com/products/docker-desktop/)
 - **VS Code**: Install from [here](https://code.visualstudio.com/)
 - **VS Code Extension: Remote Development**: Install from [here](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
-- **Cookiecutter Python package**: Install with pip or conda
+- **Cookiecutter Python package**: Install like this:
 
 ```bash
 pip install cookiecutter
