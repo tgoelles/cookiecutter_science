@@ -2,14 +2,16 @@
 
 A cookiecutter template for science and data science projects that include data, code, and dissemination.
 
+- Optimized for use with VS Code
+- Optimized for data-based publications
 - Supports Python, Julia, and R
 - Docker-based, version-controlled environment using VS Code Dev Containers
+- use of Dev container Features with pre-installed, Python, oh-my-zsh and LaTeX
+- use of VS Code tasks to trigger data collection, plotting and paper compilation
 - LaTeX-based paper
-- Optimized for data-based publications
-- Optimized for use with VS Code
 - Added path definitions in the `project_package` Python module
-- Supports custom Python packages
-- Kedro-inspired data structure
+- Kedro-inspired data folder structure
+
 
 ## Quick Start
 
