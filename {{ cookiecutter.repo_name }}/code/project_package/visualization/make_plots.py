@@ -1,5 +1,5 @@
 from project_package.visualization.visualize import demo_fig
-
+from project_package.data import config
 
 if __name__ == "__main__":
     print("redoing all plots")
