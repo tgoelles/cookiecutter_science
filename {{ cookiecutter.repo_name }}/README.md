@@ -45,10 +45,10 @@
 │   ├── 07_model_output                # Output from trained machine learning models
 │   └── 08_reporting                   # Reporting data model(s) used to combine primary, feature, model input, and model output data
 ├── dissemination                      # Materials for dissemination
-│   ├── figures                        # Figures for reports generated with Python
+│   ├── figures                        # Figures for paper generated with Python
 │   │   └── demo.png                   # Example figure file
 │   ├── presentations                  # All related PowerPoint files, especially for deliverables
-│   └── reports                        # LaTeX-based reports
+│   └── papers                         # LaTeX-based papers
 │       └── minimal.tex                # Example LaTeX report
 ├── environment.yml                    # Conda environment configuration file
 └── literature                         # References and explanatory materials

@@ -8,7 +8,7 @@ DISSEMINATION_FOLDER = Path.joinpath(PROJECT_FOLDER, "dissemination")
 
 FIGURES_FOLDER = Path.joinpath(DISSEMINATION_FOLDER, "figures")
 PRESENTATIONS_FOLDER = Path.joinpath(DISSEMINATION_FOLDER, "presentations")
-REPORTS_FOLDER = Path.joinpath(DISSEMINATION_FOLDER, "reports")
+PAPERS_FOLDER = Path.joinpath(DISSEMINATION_FOLDER, "papers")
 
 RAW_DATA_FOLDER = Path.joinpath(DATA_FOLDER, "01_raw")
 INTERMEDIATE_DATA_FOLDER = Path.joinpath(DATA_FOLDER, "02_intermediate")

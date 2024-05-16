@@ -4,7 +4,7 @@ A cookiecutter template for science and data science projects that include data,
 
 - Supports Python, Julia, and R
 - Docker-based, version-controlled environment using VS Code Dev Containers
-- LaTeX-based reports
+- LaTeX-based paper
 - Optimized for data-based publications
 - Optimized for use with VS Code
 - Added path definitions in the `project_package` Python module

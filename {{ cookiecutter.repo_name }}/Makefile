@@ -5,8 +5,8 @@
 #################################################################################
 
 PYTHON_INTERPRETER = python
-LATEX_FILE = dissemination/reports/minimal.tex
-LATEX_DIR = dissemination/reports
+LATEX_FILE = dissemination/papers/minimal.tex
+LATEX_DIR = dissemination/papers
 
 #################################################################################
 # COMMANDS                                                                      #
