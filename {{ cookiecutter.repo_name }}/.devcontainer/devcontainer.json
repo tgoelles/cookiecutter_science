@@ -26,6 +26,7 @@
 		"ghcr.io/prulloac/devcontainer-features/latex:1": {
 			"scheme": "basic",
 			"mirror": "https://mirror.ctan.org/systems/texlive/tlnet/",
+			"packages": "biblatex biber"
 		}
 	},
 	"customizations": {
@@ -118,5 +119,5 @@
 	},
 	"workspaceFolder": "/workspace",
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
-	"postCreateCommand": "pip install --editable code && sudo tlmgr install biblatex biber && sudo tlmgr path add"
+	"postCreateCommand": "pip install --editable code"
 }
