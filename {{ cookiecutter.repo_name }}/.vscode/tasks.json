@@ -22,11 +22,11 @@
             "problemMatcher": []
         },
         {
-            "label": "Make: report",
+            "label": "Make: paper",
             "type": "shell",
             "command": "make",
             "args": [
-                "report"
+                "paper"
             ],
             "group": "build",
             "problemMatcher": []

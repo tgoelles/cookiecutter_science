@@ -1,4 +1,4 @@
-.PHONY: clean data plots report delete_demo
+.PHONY: clean data plots paper delete_demo
 
 #################################################################################
 # GLOBALS                                                                       #
@@ -20,8 +20,8 @@ data:
 plots: data
 	$(PYTHON_INTERPRETER) code/project_package/visualization/make_plots.py
 
-## Compile the LaTeX report, depends on data and plots
-report: data plots
+## Compile the LaTeX paper, depends on data and plots
+paper: data plots
 	cd $(LATEX_DIR) && pdflatex minimal.tex
 	cd $(LATEX_DIR) && biber minimal
 	cd $(LATEX_DIR) && pdflatex minimal.tex

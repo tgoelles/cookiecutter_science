@@ -49,7 +49,7 @@
 │   │   └── demo.png                   # Example figure file
 │   ├── presentations                  # All related PowerPoint files, especially for deliverables
 │   └── papers                         # LaTeX-based papers
-│       └── minimal.tex                # Example LaTeX report
+│       └── minimal.tex                # Example LaTeX paper
 ├── environment.yml                    # Conda environment configuration file
 └── literature                         # References and explanatory materials
     └── references.bib                 # Bibliography file for LaTeX documents
@@ -76,7 +76,7 @@ Use Jupyter notebooks directly in VS Code. It supports many useful functionaliti
 
 ## Working with LaTeX
 
-An example LaTeX file is provided in `dissemination/reports`. The LaTeX extension is also pre-installed. To compile the LaTeX file:
+An example LaTeX file is provided in `dissemination/papers`. The LaTeX extension is also pre-installed. To compile the LaTeX file:
 - Open the file.
 - Use the TeX symbol on the side panel.
 - Select `Build LaTeX project` and use the recipe: `pdflatex -> biber -> pdflatex*2`.
@@ -126,7 +126,7 @@ Available Tasks
 
 	•	Make Data: Generates the dataset by running the data creation scripts.
 	•	Make Plots: Creates all plots for the publication.
-	•	Make Report: Compiles the LaTeX report.
+	•	Make Paper: Compiles the LaTeX report.
 	•	Clean: Deletes all compiled Python and LaTeX files.
 
 To run a task:
