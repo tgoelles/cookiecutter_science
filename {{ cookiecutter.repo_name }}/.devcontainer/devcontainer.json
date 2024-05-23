@@ -119,5 +119,8 @@
 	},
 	"workspaceFolder": "/workspace",
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
-	"postCreateCommand": "pip install --editable code"
+	"postCreateCommand": "pip install --editable code",
+	// "mounts": [
+	// 	"source=XXXXXX,target=/workspace/data/01_raw/mounts,type=bind,consistency=cached",
+	// ]
 }

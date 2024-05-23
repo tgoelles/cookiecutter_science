@@ -364,3 +364,10 @@ pythontex-files-*/
 # option is specified. Footnotes are the stored in a file with suffix Notes.bib.
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
+
+# Ignore all files and directories in the data folder
+data/**
+
+# Explicitly include files and directories under data/01_raw
+!data/01_raw/
+!data/01_raw/*
