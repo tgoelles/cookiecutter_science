@@ -12,7 +12,7 @@ A cookiecutter template for science and data science projects that include data,
 - use of VS Code tasks to trigger data collection, plotting and paper compilation
 - LaTeX-based paper
 - Added path definitions in the `project_package` Python module
-- Kedro-inspired data folder structure
+- [Kedro](https://kedro.org/)-inspired data folder structure
 - filled with a demo - which can be cleaned with "make delete_demo"
 - used in at least [5 papers](https://www.researchgate.net/profile/Thomas-Goelles)
 
