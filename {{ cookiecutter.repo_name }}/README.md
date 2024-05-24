@@ -37,13 +37,13 @@
 ├── data                               # Data directories
 │   ├── 01_raw                         # The original, immutable data dump
 │   │   └── demo.csv                   # Example raw data file
-│   ├── 02_intermediate                # Optional data model(s) to type your raw data model(s)
-│   ├── 03_primary                     # Domain-specific data model(s) containing cleansed data
-│   ├── 04_feature                     # Analytics-specific data model(s) containing a set of features defined against the primary data
-│   ├── 05_model_input                 # Analytics-specific data model(s) containing all feature data against a common dimension
+│   ├── 02_intermediate                # Intermediate processed data
+│   ├── 03_primary                     # cleaned data, used for the dissemination
+│   ├── 04_feature                     # For Machine learning, features based on the primary data
+│   ├── 05_model_input                 # The final data used for machine learning
 │   ├── 06_models                      # Stored, serialized pre-trained machine learning models
 │   ├── 07_model_output                # Output from trained machine learning models
-│   └── 08_reporting                   # Reporting data model(s) used to combine primary, feature, model input, and model output data
+│   └── 08_reporting                   # Reporting data like log files
 ├── dissemination                      # Materials for dissemination
 │   ├── figures                        # Figures for paper generated with Python
 │   │   └── demo.png                   # Example figure file
