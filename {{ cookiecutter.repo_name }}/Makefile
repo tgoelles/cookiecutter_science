@@ -5,7 +5,7 @@
 #################################################################################
 
 PYTHON_INTERPRETER = python
-LATEX_FILE = dissemination/papers/minimal.tex
+LATEX_FILE = paper
 LATEX_DIR = dissemination/papers
 
 #################################################################################
@@ -22,10 +22,10 @@ plots: data
 
 ## Compile the LaTeX paper, depends on data and plots
 paper: data plots
-	cd $(LATEX_DIR) && pdflatex minimal.tex
-	cd $(LATEX_DIR) && biber minimal
-	cd $(LATEX_DIR) && pdflatex minimal.tex
-	cd $(LATEX_DIR) && pdflatex minimal.tex
+	cd $(LATEX_DIR) && pdflatex $(LATEX_FILE).tex
+	cd $(LATEX_DIR) && biber $(LATEX_FILE)
+	cd $(LATEX_DIR) && pdflatex $(LATEX_FILE).tex
+	cd $(LATEX_DIR) && pdflatex $(LATEX_FILE).tex
 
 ## Delete all compiled Python and LaTeX files
 clean:

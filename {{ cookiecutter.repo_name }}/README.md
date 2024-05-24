@@ -49,7 +49,7 @@
 │   │   └── demo.png                   # Example figure file
 │   ├── presentations                  # All related PowerPoint files, especially for deliverables
 │   └── papers                         # LaTeX-based papers
-│       └── minimal.tex                # Example LaTeX paper
+│       └── paper.tex                  # Example LaTeX paper
 ├── environment.yml                    # Conda environment configuration file
 └── literature                         # References and explanatory materials
     └── references.bib                 # Bibliography file for LaTeX documents
