@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 2.1.0 - (2024-05-28)
 
 ### Added
 - changelog
@@ -9,7 +9,7 @@
 ### Changed
 - renamed latex report to paper
 
-## [2.0.0] - 2024-05-10
+## 2.0.0 - 2024-05-10
 ### Changed
 - Latex is pre-installed and setup – no more confusion with two VS code windows and docker containers.
 - Switched from custom docker containers to the official Dev container features. This makes it much more flexible and up-to-date. Now it's  easy to use R, Julia, and a lot of other tools. The complete list is here: [https://containers.dev/features](https://containers.dev/features).
