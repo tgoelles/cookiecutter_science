@@ -140,6 +140,7 @@ These tasks are configured in the .vscode/tasks.json file.
 
 ## More Info
 
-This template is inspired by [cookiecutter-data-science](http://drivendata.github.io/cookiecutter-data-science/) and kedro.
+Made with the template from ttps://github.com/tgoelles/cookiecutter_science
+template version: 2.0.0
 
 Contact: thomas.goelles@gmail.com
