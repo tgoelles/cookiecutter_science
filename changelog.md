@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+### Added
+- changelog
+- ignore data folder in git
+
+### Changed
+- renamed latex report to paper
+
 ## [2.0.0] - 2024-05-10
 ### Changed
 - Latex is pre-installed and setup – no more confusion with two VS code windows and docker containers.
