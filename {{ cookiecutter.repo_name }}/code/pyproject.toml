@@ -1,14 +1,19 @@
 [project]
-name = "project_package"
+authors = [{name = "Thomas Gölles", email = "thomas.goelles@gmail.com"}]
 description = "local Python package"
+name = "project_package"
 version = "0.1.0"
-authors = [{ name = "Thomas Gölles", email = "thomas.goelles@gmail.com" }]
-
+dependencies = ["numpy", "ipython", "matplotlib", "pandas", "ruff"]
 
 [build-system]
 build-backend = "flit_core.buildapi"
 requires = ["flit_core >=3.2,<4"]
 
-
 [tool.ruff]
 line-length = 120
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+]
+

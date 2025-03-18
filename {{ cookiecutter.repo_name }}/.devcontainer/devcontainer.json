@@ -6,29 +6,6 @@
 		"context": "..",
 		"dockerfile": "Dockerfile"
 	},
-	"features": {
-		"ghcr.io/devcontainers/features/common-utils:2": {
-			"installZsh": true,
-			"configureZshAsDefaultShell": true,
-			"installOhMyZsh": true,
-			"installOhMyZshConfig": true,
-			"upgradePackages": true,
-			"username": "vscode",
-			"userUid": "automatic",
-			"userGid": "1001"
-		},
-		"ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
-			"plugins": "zsh-autosuggestions",
-			"omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions",
-			"username": "vscode"
-		},
-		"ghcr.io/schlich/devcontainer-features/powerlevel10k:1": {},
-		"ghcr.io/prulloac/devcontainer-features/latex:1": {
-			"scheme": "basic",
-			"mirror": "https://mirror.ctan.org/systems/texlive/tlnet/",
-			"packages": "biblatex biber"
-		}
-	},
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -98,7 +75,6 @@
 						]
 					},
 				],
-				"python.pythonPath": "/opt/conda/bin/python",
 				"autoDocstring.docstringFormat": "google",
 				"cSpell.maxNumberOfProblems": 500,
 				"python.dataScience.alwaysTrustNotebooks": true,
@@ -106,20 +82,16 @@
 				"jupyter.jupyterCommandLineArguments": [
 					"--allow-root"
 				],
-				"python.defaultInterpreterPath": "/opt/conda/bin/python",
+				"python.venvPath": "{localWorkspaceFolder}/code/.venv",
 				"python.analysis.typeCheckingMode": "basic",
 				"python.analysis.inlayHints.functionReturnTypes": true,
-				"python.analysis.extraPaths": [
-					"${localWorkspaceFolder}",
-					"/opt/conda/pkgs"
-				],
 				"notebook.formatOnSave.enabled": true
 			},
 		},
 	},
 	"workspaceFolder": "/workspace",
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
-	"postCreateCommand": "pip install --editable code",
+	"postCreateCommand": "cd /workspace/code && uv sync",
 	// "mounts": [
 	// 	"source=XXXXXX,target=/workspace/data/01_raw/mounts,type=bind,consistency=cached",
 	// ]
