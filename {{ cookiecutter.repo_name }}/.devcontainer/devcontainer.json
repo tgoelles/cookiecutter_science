@@ -16,7 +16,8 @@
 				"njpwerner.autodocstring",
 				"oderwat.indent-rainbow",
 				"ms-toolsai.datawrangler",
-				"mechatroner.rainbow-csv"
+				"mechatroner.rainbow-csv",
+				"tamasfe.even-better-toml"
 			],
 			"settings": {
 				"editor.formatOnSave": true,
