@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+
+### Changed
+- use the latex container as the base imate
+- add uv based python environment.
+
 ## 2.1.0 - (2024-05-28)
 
 ### Added

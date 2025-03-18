@@ -5,9 +5,10 @@ A cookiecutter template for science and data science projects that include data,
 - Optimized for data-based publications
 - Optimized for use with VS Code
 - Docker-based, version-controlled environment using VS Code Dev Containers
-- conda based environment inside the Dev Container - just add packages to envrionment.yml and rebuild. Same environment for the whole team
-- use of Dev container Features with pre-installed, Python, oh-my-zsh and LaTeX
-- Optimised for use with Python but could also be used with Julia, and R
+- uv based environment inside the Dev Container
+- to add a package just follow to uv workflow: use the VS code terminal and to go the code folder and run: uv add pandas
+- use of Dev container Features with pre-installed, Python andLaTeX
+- Setup for use with Python but could also be addapted for Julia, and R
 - Make commands for: collecting data, generating, figures, typsetting latex, clean temp files, clean demo files
 - use of VS Code tasks to trigger data collection, plotting and paper compilation
 - LaTeX-based paper
@@ -71,7 +72,6 @@ cookiecutter https://github.com/tgoelles/cookiecutter_science
 │   ├── presentations                  # All related PowerPoint files, especially for deliverables
 │   └── papers                         # LaTeX-based papers
 │       └── paper.tex                  # Example LaTeX paper
-├── environment.yml                    # Conda environment configuration file
 └── literature                         # References and explanatory materials
     └── references.bib                 # Bibliography file for LaTeX documents
 ```
