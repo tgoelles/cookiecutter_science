@@ -143,6 +143,6 @@ These tasks are configured in the .vscode/tasks.json file.
 ## More Info
 
 Made with the template from ttps://github.com/tgoelles/cookiecutter_science
-template version: 2.1.0
+template version: 3.0.0
 
 Contact: thomas.goelles@gmail.com
