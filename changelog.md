@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+
+### Changed
+- switched back to custom containers as installation of additional latex packages was very slow and happening each time
+- use the latex container as the base image, which includes texlive full installation
+- add uv based Python environment. So deleted environment.yml and use only the pyproject.toml from now on.
+- updated Readme accordingly
+
 ## 2.1.0 - (2024-05-28)
 
 ### Added

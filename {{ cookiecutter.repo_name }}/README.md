@@ -9,7 +9,6 @@
 ├── .devcontainer                      # Definition of the Docker container and environment for VS Code
 │   ├── Dockerfile                     # Defines the Docker container
 │   ├── devcontainer.json              # Defines the devcontainer settings for VS Code
-│   └── noop.txt                       # Placeholder file to ensure the COPY instruction does not fail if no environment.yml exists
 ├── .gitattributes                     # Git attributes for handling line endings and merge strategies
 ├── .gitignore                         # Git ignore file to exclude files and directories from version control
 ├── Makefile                           # Makefile with commands like `make data` and `make clean`
@@ -57,15 +56,17 @@
 
 ## Important
 
+- **The image contains texlive full** and uv to hand python
 - **Raw data is immutable**: Do not change the data in `data/01_raw`.
 - **Reusable functions**: Develop reusable functions in Jupyter notebooks and then put them in the `project_package` with docstrings and type hints.
 - **VS Code settings**: Some settings are already defined in `devcontainer.json`.
-- **Default shell**: The default shell inside the container is zsh with the p10k theme.
+- **Default shell**: The default shell inside the container is bash.
 
 ## Project-Specific Packages and Settings
 
 You can customize the development environment in multiple ways:
-- **Add Python packages**: Modify the `environment.yml` file to include additional Python packages.
+
+- **Add Python packages**: Modify the `pyproject.toml` file to include additional Python packages or simply use $ uv add PACKAGENAME
 - **Add Dev Container features**: Use the VS Code command `Dev Container: Configure Container Features` to add features like R, Julia, and more.
 - **Modify Dockerfile**: Update the Dockerfile in `.devcontainer` to add additional software not available as Dev Container features.
 - **Install LaTeX packages**: Add LaTeX packages using the `postCreateCommand` in `devcontainer.json`.
@@ -77,6 +78,7 @@ Use Jupyter notebooks directly in VS Code. It supports many useful functionaliti
 ## Working with LaTeX
 
 An example LaTeX file is provided in `dissemination/papers`. The LaTeX extension is also pre-installed. To compile the LaTeX file:
+
 - Open the file.
 - Use the TeX symbol on the side panel.
 - Select `Build LaTeX project` and use the recipe: `pdflatex -> biber -> pdflatex*2`.
