@@ -17,7 +17,8 @@
 				"oderwat.indent-rainbow",
 				"ms-toolsai.datawrangler",
 				"mechatroner.rainbow-csv",
-				"tamasfe.even-better-toml"
+				"tamasfe.even-better-toml",
+				"James-Yu.latex-workshop"
 			],
 			"settings": {
 				"editor.formatOnSave": true,
