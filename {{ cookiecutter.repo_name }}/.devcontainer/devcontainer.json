@@ -84,7 +84,8 @@
 				"jupyter.jupyterCommandLineArguments": [
 					"--allow-root"
 				],
-				"python.venvPath": "{localWorkspaceFolder}/code/.venv",
+				"python.venvPath": "/workspace/.venv",
+				"python.defaultInterpreterPath": "/workspace/.venv/bin/python",
 				"python.analysis.typeCheckingMode": "basic",
 				"python.analysis.inlayHints.functionReturnTypes": true,
 				"notebook.formatOnSave.enabled": true
@@ -93,7 +94,7 @@
 	},
 	"workspaceFolder": "/workspace",
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
-	"postCreateCommand": "cd /workspace/code && uv sync",
+	"postCreateCommand": "uv sync",
 	// "mounts": [
 	// 	"source=XXXXXX,target=/workspace/data/01_raw/mounts,type=bind,consistency=cached",
 	// ]
