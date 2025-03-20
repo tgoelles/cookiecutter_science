@@ -1,9 +1,16 @@
 # Changelog
 
+## 3.1.0 - (2025-03-20)
+
+### Changed
+- a pyproject.toml at the root of the project. All dependecies and python version go there
+- changed the pyproject.toml of the project_package to only have its dependencies
+- uses uv build backend
+
 ## 3.0.0 - (2025-03-19)
 
 
-### Changed
+
 - switched back to custom containers as installation of additional latex packages was very slow and happening each time
 - use the latex container as the base image, which includes texlive full installation
 - add uv based Python environment. So deleted environment.yml and use only the pyproject.toml from now on.

@@ -1,0 +1,21 @@
+[project]
+name = "{{ cookiecutter.repo_name }}"
+description = "{{ cookiecutter.description }}"
+version = "0.1.0"
+authors = [{ name = "Thomas Gölles", email = "thomas.goelles@gmail.com" }]
+dependencies = ["numpy", "matplotlib", "pandas", "polars"]
+requires-python = ">=3.12"
+
+
+[tool.ruff]
+line-length = 120
+
+[tool.uv.sources]
+project_package = { workspace = true }
+
+[tool.uv.workspace]
+members = ["code/project_package"]
+
+
+[dependency-groups]
+dev = ["project_package", "ipykernel>=6.29.5", "ruff" , "mypy"]

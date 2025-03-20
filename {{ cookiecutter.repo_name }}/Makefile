@@ -7,6 +7,7 @@
 PYTHON_INTERPRETER = python
 LATEX_FILE = paper
 LATEX_DIR = dissemination/papers
+PACKAGE_DIR = code/project_package/src/project_package
 
 #################################################################################
 # COMMANDS                                                                      #
@@ -14,11 +15,11 @@ LATEX_DIR = dissemination/papers
 
 ## Make Dataset requirements
 data:
-	$(PYTHON_INTERPRETER) code/project_package/data/make_dataset.py
+	$(PYTHON_INTERPRETER) $(PACKAGE_DIR)/data/make_dataset.py
 
 ## Generate all plots for the publication, depends on data
 plots: data
-	$(PYTHON_INTERPRETER) code/project_package/visualization/make_plots.py
+	$(PYTHON_INTERPRETER) $(PACKAGE_DIR)/visualization/make_plots.py
 
 ## Compile the LaTeX paper, depends on data and plots
 paper: data plots
