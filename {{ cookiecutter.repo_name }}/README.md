@@ -50,7 +50,7 @@
 │   └── presentations                      #  Presentation slides and materials
 ├── literature                             #  References and related work
 │   └── references.bib                     #  Bibliography file
-├── pyproject.toml                         #  All Project dependencie and tool settings, managed by uv
+├── pyproject.toml                         #  All Project dependencies and tool settings, managed by uv
 └── uv.lock                                #  Dependency lock file for reproducibility
 ```
 
