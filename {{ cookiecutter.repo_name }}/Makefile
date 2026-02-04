@@ -4,8 +4,9 @@
 # GLOBALS                                                                       #
 #################################################################################
 
-PYTHON_INTERPRETER = python
-LATEX_FILE = paper
+PYTHON_INTERPRETER = uv run
+BIB_INTERPRETER = bibtex # or biber depending on the journal requirements
+LATEX_FILE = paper # without .tex extension
 LATEX_DIR = dissemination/papers
 PACKAGE_DIR = code/project_package/src/project_package
 
@@ -24,7 +25,7 @@ plots: data
 ## Compile the LaTeX paper, depends on data and plots
 paper: data plots
 	cd $(LATEX_DIR) && pdflatex $(LATEX_FILE).tex
-	cd $(LATEX_DIR) && biber $(LATEX_FILE)
+	cd $(LATEX_DIR) && $(BIB_INTERPRETER) $(LATEX_FILE)
 	cd $(LATEX_DIR) && pdflatex $(LATEX_FILE).tex
 	cd $(LATEX_DIR) && pdflatex $(LATEX_FILE).tex
 
