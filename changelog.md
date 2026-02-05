@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.120 - (2026-02-04)
+
+### Changed
+- using newer Docker image with debian trixie see https://github.com/tgoelles/LaTex_docker
+- this image comes also with some nice tools
+- added BIB_INTERPRETER to the make file to use biber or bibtex depending ton the journals needs
+
+
 ## 3.1.0 - (2025-03-20)
 
 ### Changed
