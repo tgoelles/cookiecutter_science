@@ -1,4 +1,4 @@
-FROM ghcr.io/tgoelles/latex_docker:v0.1.0
+FROM ghcr.io/tgoelles/latex_docker:v0.1.6
 
 
 # [Optional] Uncomment and change this  section to install additional LaTeX packages.

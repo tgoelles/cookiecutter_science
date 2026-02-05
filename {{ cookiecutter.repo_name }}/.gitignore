@@ -371,3 +371,6 @@ data/**
 # Explicitly include files and directories under data/01_raw
 !data/01_raw/
 !data/01_raw/*
+
+# ignore bib.bak files
+literature/*.bib.bak

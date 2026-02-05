@@ -9,13 +9,14 @@ A cookiecutter template for science and data science projects that include data,
 - to add a package just follow to uv workflow: use the VS code terminal and to go the code folder and run: uv add pandas
 - use of Dev container Features with pre-installed, Python andLaTeX
 - Setup for use with Python but could also be addapted for Julia, and R
-- Make commands for: collecting data, generating, figures, typsetting latex, clean temp files, clean demo files
+- Just commands for: collecting data, generating, figures, typsetting latex, clean temp files, clean demo files and more
 - use of VS Code tasks to trigger data collection, plotting and paper compilation
 - LaTeX-based paper
+- tools to clean up bib files and to add a bibtex entry from doi
 - Added path definitions in the `project_package` Python module
 - [Kedro](https://kedro.org/)-inspired data folder structure
 - filled with a demo - which can be cleaned with "make delete_demo"
-- used in at least [5 papers](https://www.researchgate.net/profile/Thomas-Goelles)
+- used in at least [6 papers](https://www.researchgate.net/profile/Thomas-Goelles)
 
 For more detailed information, please see the [README of the resulting project](./%7B%7B%20cookiecutter.repo_name%20%7D%7D/README.md).
 
@@ -48,6 +49,7 @@ cookiecutter https://github.com/tgoelles/cookiecutter_science
 │               ├── tools                  #  Utility scripts
 │               │   ├── __init__.py        #
 │               │   └── convert_latex.py   #  LaTeX conversion script
+│               │   └── clean_bib.py       #  Script to clean messy bib files
 │               └── visualization          #  Visualization module and scripts
 │                   ├── __init__.py        #
 │                   ├── make_plots.py      #  Plot generation functions

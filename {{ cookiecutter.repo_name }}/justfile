@@ -1,0 +1,77 @@
+PYTHON_INTERPRETER := "uv run"
+LATEX_FILE := "paper"
+LATEX_DIR := "dissemination/papers"
+BIB_FILE := "literature/references.bib"
+PACKAGE_DIR := "code/project_package/src/project_package"
+
+set shell := ['bash', '-cu']
+
+# Set the default recipe to list all available commands
+default:
+  @just --list
+
+# use make_dataset to create the datasa
+data:
+	{{PYTHON_INTERPRETER}} {{PACKAGE_DIR}}/data/make_dataset.py
+
+# use make_plots to create the plots, runs after data
+plots: data
+	{{PYTHON_INTERPRETER}} {{PACKAGE_DIR}}/visualization/make_plots.py
+
+# use make_paper to create the paper, runs after data and plots
+paper: data plots
+	cd {{LATEX_DIR}} && pdflatex {{LATEX_FILE}}.tex
+	cd {{LATEX_DIR}} && bibtex {{LATEX_FILE}}
+	cd {{LATEX_DIR}} && pdflatex {{LATEX_FILE}}.tex
+	cd {{LATEX_DIR}} && pdflatex {{LATEX_FILE}}.tex
+
+# Remove all generated files
+[group('clean')]
+clean:
+	find . -type f -name "*.py[co]" -delete
+	find . -type d -name "__pycache__" -delete
+	find . -type f -name "*.aux" -delete
+	find . -type f -name "*.bbl" -delete
+	find . -type f -name "*.bcf" -delete
+	find . -type f -name "*.blg" -delete
+	find . -type f -name "*.log" -delete
+	find . -type f -name "*.out" -delete
+	find . -type f -name "*.run.xml" -delete
+	find . -type f -name "*.toc" -delete
+	find . -type f -name "*.synctex.gz" -delete
+
+# Remove the demo dataset and figure
+[group('clean')]
+delete_demo:
+	rm -f data/01_raw/demo.csv
+	rm -f dissemination/figures/demo.png
+
+# clean up bib file using bibtex-tidy and the custom clean_bib script
+[group('bib')]
+bib_clean:
+    # Create a backup before modifying
+    cp {{BIB_FILE}} {{BIB_FILE}}.bak
+    bibtex-tidy \
+        --modify \
+        --curly \
+        --numeric \
+        --tab \
+        --align=13 \
+        --duplicates=key \
+        --merge=combine \
+        --sort-fields \
+        --encode-urls \
+        --strip-comments \
+        --remove-empty-fields \
+        --escape \
+        --enclosing-braces=title \
+        --drop-all-caps \
+        --sort {{BIB_FILE}}
+    uv run code/project_package/src/project_package/tools/clean_bib.py {{BIB_FILE}}
+
+
+# add a new entry to the bib file from a doi using doi2bib: just doi2bib 10.xxxx/xxxxx
+[group('bib')]
+doi2bib doi:
+	doi2bib {{doi}} >> {{BIB_FILE}}
+	just bib_clean

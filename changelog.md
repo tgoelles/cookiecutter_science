@@ -1,5 +1,18 @@
 # Changelog
 
+## 4.0.0 - (2026-02-04)
+
+### Changed
+
+* Migrated task runner from make to just: Transitioned to a justfile for improved readability, better error handling, and a more modern developer experience.
+* Optimized TeX Live environment: Refined the LaTeX distribution to a minimal setup, significantly reducing image size and download times while maintaining compatibility with standard document classes.
+
+### Added
+
+* Automated Bibliography Management: bib_clean: A robust just recipe to automatically format, sort, and deduplicate .bib files using bibtex-tidy.
+* doi2bib: A convenience recipe to fetch and append BibTeX entries directly from a DOI.
+* Integrated Python post-processing: Added clean_bib.py for for custom bibliography transformations.
+
 ## 3.2.0 - (2026-02-04)
 
 ### Changed

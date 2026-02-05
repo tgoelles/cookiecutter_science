@@ -2,9 +2,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Make: data",
+            "label": "just: data",
             "type": "shell",
-            "command": "make",
+            "command": "just",
             "args": [
                 "data"
             ],
@@ -12,9 +12,9 @@
             "problemMatcher": []
         },
         {
-            "label": "Make: plots",
+            "label": "just: plots",
             "type": "shell",
-            "command": "make",
+            "command": "just",
             "args": [
                 "plots"
             ],
@@ -22,9 +22,9 @@
             "problemMatcher": []
         },
         {
-            "label": "Make: paper",
+            "label": "just: paper",
             "type": "shell",
-            "command": "make",
+            "command": "just",
             "args": [
                 "paper"
             ],
@@ -32,9 +32,9 @@
             "problemMatcher": []
         },
         {
-            "label": "Make: clean",
+            "label": "just: clean",
             "type": "shell",
-            "command": "make",
+            "command": "just",
             "args": [
                 "clean"
             ],
@@ -42,9 +42,9 @@
             "problemMatcher": []
         },
         {
-            "label": "Make: delete_demo",
+            "label": "just: delete_demo",
             "type": "shell",
-            "command": "make",
+            "command": "just",
             "args": [
                 "delete_demo"
             ],
