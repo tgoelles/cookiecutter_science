@@ -4,7 +4,7 @@ description = "{{ cookiecutter.description }}"
 version = "0.1.0"
 authors = [{ name = "Thomas Gölles", email = "thomas.goelles@gmail.com" }]
 dependencies = ["numpy", "matplotlib", "pandas", "polars"]
-requires-python = ">=3.12"
+requires-python = ">=3.13"
 
 
 [tool.ruff]
