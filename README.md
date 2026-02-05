@@ -29,7 +29,7 @@ cookiecutter https://github.com/tgoelles/cookiecutter_science
 ## File Structure
 
 ```
-├── Makefile                        	    #  Automation script for common tasks
+├── justfile                        	    #  Automation script for common tasks
 ├── README.md                       	    #  Project overview and instructions
 ├── code                                   #  Python Source code and notebooks
 │   ├── notebooks                          #  Jupyter notebooks for analysis
