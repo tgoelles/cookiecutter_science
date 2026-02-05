@@ -1,3 +1,4 @@
+{% raw %}
 PYTHON_INTERPRETER := "uv run"
 LATEX_FILE := "paper"
 LATEX_DIR := "dissemination/papers"
@@ -74,4 +75,6 @@ bib_clean:
 [group('bib')]
 doi2bib doi:
 	doi2bib {{doi}} >> {{BIB_FILE}}
-	just bib_clean
+		just bib_clean
+
+	{% endraw %}
