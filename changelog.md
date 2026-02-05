@@ -1,6 +1,6 @@
 # Changelog
 
-## 3.120 - (2026-02-04)
+## 3.2.0 - (2026-02-04)
 
 ### Changed
 - using newer Docker image with debian trixie see https://github.com/tgoelles/LaTex_docker
